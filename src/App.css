@@ -1,0 +1,16 @@
+.login-container .MuiInputBase-root input{
+    padding: 8px 10px;
+}
+/* Common Dropdown overrided Stylesheet */
+
+.MuiList-root{
+  height: auto;
+  background-color: #ffffff;
+  max-height: 350px;
+}
+.MuiList-root .MuiButtonBase-root .Mui-selected{
+  background-color:  #ffffff;
+}
+.MuiList-root li:hover{
+  background-color:  #c7c7c8;
+}

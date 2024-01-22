@@ -1,0 +1,20 @@
+/* NAvbar */
+.navbar .dropdown-menu,
+.navbar .dropdown-menu a {
+    background-color: #035d8a;
+    color: #fff;
+}
+.navbar ul li:hover{
+    background-color: #efefef;
+}
+.navbar .dropdown-menu,
+.navbar .dropdown-menu a:hover {
+    background-color: #248dc1;
+}
+.navbar .logo-wrapper{
+    width: 260px;
+}
+.navbar .dropdown-menu,
+.navbar ul{
+    font-size: 14px;
+}
