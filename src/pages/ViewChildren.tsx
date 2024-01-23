@@ -32,7 +32,7 @@ function ViewChildren() {
             headerName: 'Name',
             width: 250,
         },
-        { field: 'age', headerName: 'Age', width: 150    },
+        { field: 'age', headerName: 'Age', width: 150 },
         {
             field: 'school', headerName: 'School', width: 250, renderCell: ( params ) => {
                 return <>
@@ -85,18 +85,18 @@ function ViewChildren() {
             field: 'edit', headerName: 'Edit', width: 180, renderCell: ( params ) => {
                 return <>
                     <Box>
-                        <Button size="small" 
-                          variant="text"  
-                          sx={{
-                            textTransform:'none',
-                            padding:'8px 22px',
-                            borderRadius:'20px',
-                            '&:hover':{
-                                background:'#248dc1',
-                                color:'#fff'
-                            }
+                        <Button size="small"
+                            variant="text"
+                            sx={{
+                                textTransform: 'none',
+                                padding: '8px 22px',
+                                borderRadius: '20px',
+                                '&:hover': {
+                                    background: '#248dc1',
+                                    color: '#fff'
+                                }
                             }}
-                         startIcon={<EditIcon fontSize="small" />}> Edit Info </Button>
+                            startIcon={<EditIcon fontSize="small" />}> Edit Info </Button>
                     </Box>
                 </>
             }
@@ -105,7 +105,7 @@ function ViewChildren() {
 
     const rows = [
         {
-            id: 1, 
+            id: 1,
             name: 'John Lio John LioJohn LioJohn LioJohn LioJohn LioJohn LioJohn LioJohn Lio John Lio',
             age: '6y 2m',
             school: 'SP jucj  dkfnkd ',
@@ -306,13 +306,13 @@ function ViewChildren() {
                 <Box>
                     <Grid container>
                         <Grid item xs={10}>
-                            <Stack direction={{lg:'row',xs:'column'}} gap={2}>
-                                <Stack direction={'row'} gap={2}  width={'100%'}>
+                            <Stack direction={{ lg: 'row', xs: 'column' }} gap={2}>
+                                <Stack direction={'row'} gap={2} width={'100%'}>
                                     <CommonSelect bg_color="#eeeeee" list={SchoolList} labelName="School :" />
                                     <CommonSelect bg_color="#eeeeee" list={ClassList} labelName="Class :" />
                                     <CommonSelect bg_color="#eeeeee" list={SchoolList} labelName="Teacher :" />
                                 </Stack>
-                                <Stack direction={'row'} gap={2}  width={'100%'}>
+                                <Stack direction={'row'} gap={2} width={'100%'}>
                                     <CommonSelect bg_color="#eeeeee" list={ClassList} labelName="Photo Status :" />
                                     <CommonSelect bg_color="#eeeeee" list={StatusList} labelName="Educational Journey :" />
                                     <CommonSelect bg_color="#eeeeee" list={StatusList} labelName="Status :" />
@@ -381,16 +381,19 @@ function ViewChildren() {
                                 '& .MuiDataGrid-main .MuiDataGrid-virtualScroller .MuiDataGrid-row:nth-child(odd)': {
                                     background: '#f2f2f2'
                                 },
-                                '& .MuiDataGrid-withBorderColor':{
-                                    borderColor:'none'
+                                '& .MuiDataGrid-withBorderColor': {
+                                    borderColor: 'none'
                                 },
 
-                                '& .MuiDataGrid-cell':{
-                                    padding:'4px 10px'
+                                '& .MuiDataGrid-cell': {
+                                    padding: '4px 10px',
+                                    fontFamily: 'Chivo'
                                 },
-                                '& .MuiTablePagination-root .MuiToolbar-root p':{
-                                    margin:0
-                                }
+                                '& .MuiTablePagination-root .MuiToolbar-root p': {
+                                    margin: 0
+                                },
+                             
+
 
                             }}
                             columns={cols}
@@ -401,7 +404,7 @@ function ViewChildren() {
                                     }
                                 }
                             }}
-                            pageSizeOptions={[5,10,15,20,25,30,35,40,45,50]}
+                            pageSizeOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}
                             checkboxSelection
                             disableRowSelectionOnClick
                         >

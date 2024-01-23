@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { Avatar, Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, InputLabel, Radio, RadioGroup, TextField, Typography } from "@mui/material";
+import { Avatar, Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, InputLabel, Radio, RadioGroup, Stack, TextField, Typography } from "@mui/material";
 
 import Footer from "../components/Layout/Footer";
 import PageHeader from "../components/PageHeader";
@@ -13,10 +13,10 @@ import { useState } from "react";
 
 function AddChild() {
 
-  const [selectedValue, setSelectedValue] = useState('english');
+  const [selectedValue, setSelectedValue] = useState( 'english' );
 
-  const handleChange = (event: any) => {
-    setSelectedValue(event.target.value);
+  const handleChange = ( event: any ) => {
+    setSelectedValue( event.target.value );
   };
   return (
     <>
@@ -24,7 +24,7 @@ function AddChild() {
         <PageHeader headerName="Add Child" />
         <Box>
           <Grid container>
-            <Grid item sm={3} p={2} pt={6} >
+            <Grid item xs={9} sm={9} md={3} lg={3} px={{ sm: 6, xs: 6, md: 2 }} pt={6} >
               <Box sx={{ backgroundColor: "#eee", borderRadius: 3, p: 1, }}>
                 <Typography sx={{ fontFamily: "Chivo,sans-serif", color: "rgb(80, 80, 80)" }}>
                   Adding Multiple Children?
@@ -51,7 +51,7 @@ function AddChild() {
               </Box>
             </Grid>
 
-            <Grid item sm={9} p={6}>
+            <Grid item xs={12} sm={12} md={9} lg={9} p={6}>
               <Grid container>
                 <Grid item xs={9}>
                   <Box sx={{ backgroundColor: "#e9faff", mb: 2 }}>
@@ -61,33 +61,33 @@ function AddChild() {
                 </Grid>
                 <Grid item xs={9} sx={{ border: "1px solid #ddd", p: 2, mb: 3, borderRadius: "6px" }}>
                   <Grid container >
-                    <Grid item xs={6}>
-                      <Box sx={{ fontFamily: "Chivo", color: "#111", pr: 2, pb: 2 }}>
-                        <CommonSelect labelName="School*" list={SchoolList} />
+                    <Grid item xs={12} sm={12} md={6}>
+                      <Box sx={{ fontFamily: "Chivo", color: "#111", pr: { sm: 0, md: 2 }, pb: 2 }}>
+                        <CommonSelect bg_color="transparent" labelName="School*" list={SchoolList} />
                       </Box>
                     </Grid>
 
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={12} md={6}>
                       <Box sx={{ fontFamily: "Chivo", color: "#111", }}>
-                        <CommonSelect labelName="Class*" list={SchoolList} />
+                        <CommonSelect bg_color="transparent" labelName="Class*" list={SchoolList} />
                       </Box>
                     </Grid>
 
-                    <Grid item xs={6}>
-                      <Box sx={{ fontFamily: "Chivo", color: "#111", pr: 2, pb: 2 }}>
+                    <Grid item xs={12} sm={12} md={6} mt={2}>
+                      <Box sx={{ fontFamily: "Chivo", color: "#111", pr: { sm: 0, md: 2 }, pb: 2 }}>
                         <InputLabel sx={{ fontFamily: "Chivo", color: "#111", }}>First Name*</InputLabel>
                         <TextField fullWidth size="small" />
                       </Box>
                     </Grid>
 
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={12} md={6} mt={{ sx: 0, md: 2 }}>
                       <Box sx={{ fontFamily: "Chivo", color: "#111" }}>
                         <InputLabel sx={{ fontFamily: "Chivo", color: "#111", }}>Last Name*</InputLabel>
                         <TextField fullWidth size="small" />
                       </Box>
                     </Grid>
 
-                    <Grid item xs={4}>
+                    <Grid item xs={10} sm={10} md={4} mt={2}>
                       <Box sx={{ fontFamily: "Chivo", color: "#111", pb: 2 }}>
                         <InputLabel sx={{ fontFamily: "Chivo", color: "#111", }}>Date of Birth (MM/DD/YY)*</InputLabel>
                         <TextField fullWidth type="date" size="small" />
@@ -97,7 +97,7 @@ function AddChild() {
 
                   <Grid item xs={9}>
                     <Grid container>
-                      <Grid item xs={6.5}>
+                      <Grid item xs={12} lg={6.5}>
                         <Box sx={{ fontFamily: "Chivo, sans-serif", color: "#111" }}>Education Jorney*</Box>
                         <Box>
                           <FormGroup >
@@ -107,7 +107,7 @@ function AddChild() {
                           </FormGroup>
                         </Box>
                       </Grid>
-                      <Grid item>
+                      <Grid item xs={12} lg={5.5} mt={{ xs: 2, lg: 0 }}>
                         <FormControl className="radiobutton" component="fieldset">
                           <FormLabel sx={{ fontFamily: "Chivo", color: '#111 !important' }} component="legend">Ignite Game Language <span style={{ color: "#248dc1" }}>*</span>
                           </FormLabel>
@@ -118,34 +118,36 @@ function AddChild() {
                             value={selectedValue}
                             onChange={handleChange}
                           >
-                            <FormControlLabel value="english" control={<Radio sx={{ '&.Mui-checked': { color: '#7b7b7b' } }} />} label="ENGLISH"
-                              sx={{
-                                px: 2, borderRadius: "29px",
-                                backgroundColor: selectedValue === 'english' ? '#00af51' : 'none',
-                                color: selectedValue === 'english' ? '#fff' : '',
-                                '& .Mui-checked': {
-                                  color: selectedValue === 'english' ? '#7b7b7b' : '',
-                                },
-                                '&:hover': {
-                                  color: '#fff',
-                                  backgroundColor: '#00af51',
-                                },
-                              }}
-                            />
-                            <FormControlLabel value="spanish" control={<Radio sx={{ '&.Mui-checked': { color: '#7b7b7b' } }} />} label="SPANISH"
-                              sx={{
-                                px: 2, borderRadius: "29px",
-                                backgroundColor: selectedValue === 'spanish' ? '#00af51' : 'none',
-                                color: selectedValue === 'spanish' ? '#fff' : '',
-                                '& .Mui-checked': {
-                                  color: selectedValue === 'spanish' ? '#7b7b7b' : '',
-                                },
-                                '&:hover': {
-                                  color: '#fff',
-                                  backgroundColor: '#00af51',
-                                },
-                              }}
-                            />
+                            <Stack direction={{ xs: 'column', lg: 'row' }} gap={1}>
+                              <FormControlLabel value="english" control={<Radio sx={{ '&.Mui-checked': { color: '#7b7b7b' } }} />} label="ENGLISH"
+                                sx={{
+                                  px: 2, borderRadius: "29px",
+                                  backgroundColor: selectedValue === 'english' ? '#00af51' : 'none',
+                                  color: selectedValue === 'english' ? '#fff' : '',
+                                  '& .Mui-checked': {
+                                    color: selectedValue === 'english' ? '#7b7b7b' : '',
+                                  },
+                                  '&:hover': {
+                                    color: '#fff',
+                                    backgroundColor: '#00af51',
+                                  },
+                                }}
+                              />
+                              <FormControlLabel value="spanish" control={<Radio sx={{ '&.Mui-checked': { color: '#7b7b7b' } }} />} label="SPANISH"
+                                sx={{
+                                  px: 2, borderRadius: "29px",
+                                  backgroundColor: selectedValue === 'spanish' ? '#00af51' : 'none',
+                                  color: selectedValue === 'spanish' ? '#fff' : '',
+                                  '& .Mui-checked': {
+                                    color: selectedValue === 'spanish' ? '#7b7b7b' : '',
+                                  },
+                                  '&:hover': {
+                                    color: '#fff',
+                                    backgroundColor: '#00af51',
+                                  },
+                                }}
+                              />
+                            </Stack>
                           </RadioGroup>
                         </FormControl>
                       </Grid>
@@ -162,7 +164,7 @@ function AddChild() {
                       <Typography sx={{ fontFamily: "Chivo", color: "#111", mb: 1.5 }}>Child Photo - Can be added later
                       </Typography>
                     </Box>
-                    <Grid container xs={9} sx={{ display: "flex", mb: 3 }} >
+                    <Grid container xs={9} sx={{ display: "flex", mb: 3, mt: { xs: 2, lg: 0 } }} >
                       <Grid item>
                         <Avatar
                           alt="Remy Sharp"
@@ -195,7 +197,7 @@ function AddChild() {
                     </Grid>
                     <Box sx={{ fontFamily: "Chivo, sans-serif", fontSize: "200px", color: "#111" }}>
                       <FormGroup>
-                        <FormControlLabel control={<Checkbox defaultChecked color="success"/>} label="Use placeholder image" />
+                        <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Use placeholder image" />
                         <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Request photo from family member" />
                       </FormGroup>
                     </Box>
