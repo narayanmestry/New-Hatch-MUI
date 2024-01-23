@@ -3,17 +3,19 @@ import PropTypes from 'prop-types';
 import { Button, FormControl, InputAdornment, OutlinedInput } from "@mui/material"
 import SearchIcon from '@mui/icons-material/Search';
 
+
 type InputParameterList = {
     placeholder:string
 }
 
 function InputWithSearch(props:InputParameterList) {
     return (
-        <FormControl sx={{ m: 1, width: '235px' }} variant="outlined">
+        <FormControl sx={{mr: 2, mb:2, width: '100%' }} variant="outlined">
             <OutlinedInput
+                size='small'
                 id="outlined-adornment-weight"
                 endAdornment={<InputAdornment position="end">
-                    <Button color='info' sx={{ minWidth: 0, padding: '15px 3px',bgcolor: '#bebfbe' }} >
+                    <Button color='info' sx={{ minWidth: 0, padding: '7px 3px',bgcolor: '#bebfbe' }} >
                         <SearchIcon />
                     </Button>
                 </InputAdornment>}
@@ -23,6 +25,7 @@ function InputWithSearch(props:InputParameterList) {
                     'aria-label': 'weight',
                 }}
                 sx={{
+                    
                     bgcolor: '#eeeeee',
                     paddingRight: '2px',
                     '& .MuiOutlinedInput-notchedOutline': {

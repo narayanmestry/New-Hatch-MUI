@@ -1,16 +1,37 @@
-.login-container .MuiInputBase-root input{
-    padding: 8px 10px;
+.login-container .MuiInputBase-root input {
+  padding: 8px 10px;
 }
 /* Common Dropdown overrided Stylesheet */
-
-.MuiList-root{
+.MuiList-root {
   height: auto;
   background-color: #ffffff;
   max-height: 350px;
 }
-.MuiList-root .MuiButtonBase-root .Mui-selected{
-  background-color:  #ffffff;
+.MuiList-root .MuiButtonBase-root .Mui-selected {
+  background-color: #ffffff;
 }
-.MuiList-root li:hover{
-  background-color:  #c7c7c8;
+.MuiList-root li:hover {
+  background-color: #c7c7c8;
+}
+/* Button  */
+.header-btn.MuiButtonBase-root{
+ color: #fff;
+ text-transform: none;
+}
+.header-btn .MuiTouchRipple-root {
+  background-color: transparent;
+  color: #fff;
+}
+/* DataGrid  */
+.MuiButtonBase-root.MuiCheckbox-root.Mui-checked{
+  color: #00af51 !important;
+}
+.MuiDataGrid-cell{
+  padding: 0;
+}
+.MuiDataGrid-cell:focus, 
+.MuiDataGrid-columnHeader:focus,
+.MuiDataGrid-columnHeader:focus-within,
+.MuiDataGrid-cell:focus-within {
+  outline: none !important;     /* This is use for remove the outline colour after click on cell */
 }
