@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
 
-import { FormControl, MenuItem, Select, Typography } from "@mui/material"
+import  FormControl from "@mui/material/FormControl"
+import  MenuItem from "@mui/material/MenuItem"
+import  Select from "@mui/material/Select"
+import  Typography from "@mui/material/Typography"
+
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 type OptionList = {
     labelName?: string,
-    bg_color?:string,
+    bg_color?: string,
     list: string[]
 }
 function CommonSelect( props: OptionList ) {
@@ -17,7 +21,7 @@ function CommonSelect( props: OptionList ) {
                 props.labelName && <Typography fontWeight={600}
                     sx={{
                         '@media (max-width: 1300px)': {
-                            fontSize:'14px'
+                            fontSize: '14px'
                         },
                     }}>
                     <label htmlFor="" >{props.labelName}</label>
@@ -32,7 +36,6 @@ function CommonSelect( props: OptionList ) {
                 defaultValue='none'
                 sx={{
                     bgcolor: props.bg_color,
-                    // bgcolor:'',
                     '& .MuiOutlinedInput-notchedOutline': {
                         borderColor: '#c7c7c8', // Set your desired border color here
 
@@ -58,7 +61,8 @@ function CommonSelect( props: OptionList ) {
 }
 CommonSelect.prototype = {
     labelName: PropTypes.string,
-    list: PropTypes.array
+    list: PropTypes.array,
+    bg_color:PropTypes.string
 
 }
 export default CommonSelect

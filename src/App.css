@@ -47,6 +47,9 @@
 .MuiList-root .MuiButtonBase-root .Mui-selected{
   background-color:  #ffffff;
 }
+.MuiList-root li{
+  font-family: 'chivo';
+}
 .MuiList-root li:hover{
   background-color:  #c7c7c8;
 }

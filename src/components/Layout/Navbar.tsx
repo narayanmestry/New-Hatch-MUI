@@ -1,6 +1,6 @@
 import { common } from '@mui/material/colors';
 import hatchLogo from '../../assets/insights_logo.png'
-import OrgAdminNavbarData from '../../dummyData/OrgAdminNavbarData';
+import OrgAdminNavbarData from '../../dummyData/HatchAdminNavbarData';
 import { NavLink } from 'react-router-dom';
 
 
