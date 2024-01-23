@@ -24,4 +24,16 @@ export const hatchTheme = createTheme({
       A200:'#eaeaea'
     }
   },
+  components:{
+    MuiCheckbox:{
+      styleOverrides:{
+        root:{
+          "&.Mui-checked": {
+            color: "#00AF51",
+          },
+          "& .MuiSvgIcon-root": { fontSize: 29},
+        }
+      }
+    }
+  }
 });
