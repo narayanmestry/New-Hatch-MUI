@@ -39,6 +39,12 @@ const OrgAdminNavbarData = [
                 "subMenuTitle": "Add User",
                 "icon": "",
                 "urlLink":'add-user'
+            },
+             {
+                "id": 7,
+                "subMenuTitle": "Add Child",
+                "icon": "",
+                "urlLink":'add-child'
             }
         ]
     },

@@ -2,7 +2,6 @@
     padding: 8px 10px;
 }
 /* Common Dropdown overrided Stylesheet */
-
 .MuiList-root{
   height: auto;
   background-color: #ffffff;
@@ -13,4 +12,7 @@
 }
 .MuiList-root li:hover{
   background-color:  #c7c7c8;
+}
+.MuiFormControlLabel-label {
+  font-family: Chivo !important;
 }
