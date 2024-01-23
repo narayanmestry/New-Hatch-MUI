@@ -3,8 +3,8 @@ import { Box, Typography } from "@mui/material"
 function Footer() {
     return (
         <Box component='div' sx={{
-            position: 'fixed',
-            bottom: 0,
+            // position: 'fixed',
+            // bottom: 0,
             bgcolor: '#248dc1',
             color: '#ffffff',
             height: 50,

@@ -9,6 +9,7 @@ import ViewAllSchool from "../pages/ViewAllSchool";
 import AddSchool from "../pages/AddSchool";
 import ViewAllUser from "../pages/ViewAllUser";
 import AddUser from "../pages/AddUser";
+import ViewChildren from "../pages/ViewChildren";
 import AddChild from "../pages/AddChild";
 
 function AllRoutes() {
@@ -23,6 +24,7 @@ function AllRoutes() {
                 <Route path="add-school" element={<AddSchool/>}/>
                 <Route path="view-all-user" element={<ViewAllUser/>}/>
                 <Route path="add-user" element={<AddUser/>}/>
+                <Route path="view-children" element={<ViewChildren/>}/>
                 <Route path="add-child" element={<AddChild/>}/>
             </Route>
         </Routes>

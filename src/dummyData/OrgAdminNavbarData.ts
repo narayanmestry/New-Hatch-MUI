@@ -40,6 +40,12 @@ const OrgAdminNavbarData = [
                 "icon": "",
                 "urlLink":'add-user'
             },
+            {
+                "id": 7,
+                "subMenuTitle": "View Children",
+                "icon": "",
+                "urlLink":'view-children'
+            },
              {
                 "id": 7,
                 "subMenuTitle": "Add Child",
