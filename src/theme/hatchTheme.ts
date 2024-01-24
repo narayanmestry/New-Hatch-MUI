@@ -1,39 +1,50 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 export const hatchTheme = createTheme({
   palette: {
     primary: {
-      main:'#248dc1'
+      main: "#248dc1",
     },
     secondary: {
-      main: '#f44336',
+      main: "#f44336",
     },
-    success:{
-        main:'#00a551'
+    success: {
+      main: "#00a551",
     },
-    error:{
-        main:'#f44336'
+    error: {
+      main: "#f44336",
     },
-    common:{
-        white:'#fff'
+    common: {
+      white: "#fff",
     },
-    info:{
-        main:'#000',
+    info: {
+      main: "#000",
     },
-    grey:{
-      A100:'#eeeeee',
-      A200:'#eaeaea'
-    }
+    grey: {
+      A100: "#eeeeee",
+      A200: "#eaeaea",
+    },
   },
-  components:{
-    MuiCheckbox:{
-      styleOverrides:{
-        root:{
+  components: {
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
           "&.Mui-checked": {
             color: "#00AF51",
           },
-          "& .MuiSvgIcon-root": { fontSize: 29},
-        }
-      }
-    }
-  }
+          "& .MuiSvgIcon-root": { fontSize: 29 },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Chivo",
+          color: "#111",
+          marginBottom: "5px",
+          fontSize:'18px',
+          paddingLeft:'5px'
+        },
+      },
+    },
+  },
 });
