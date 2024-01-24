@@ -39,7 +39,7 @@
     padding: 8px 10px;
 }
 /* Common Dropdown overrided Stylesheet */
-.MuiList-root{
+.MuiList-root{  
   height: auto;
   background-color: #ffffff;
   max-height: 350px;

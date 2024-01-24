@@ -20,11 +20,22 @@ type LoginFormData = {
 
 function LoginRegistrationPage() {
   const { register, handleSubmit, control, formState: { errors } } = useForm<LoginFormData>();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  // const userRole = 'HATCH-ADMIN'
+  const userRole = 'ORG-ADMIN'
 
   const onLoginSubmit: SubmitHandler<LoginFormData> = ( data ) => {
     console.log( "Form Data ====>", data )
-    navigate('/dashboard')
+    if(userRole.includes('HATCH-ADMIN')){
+      navigate('hatch/dashboard')
+      console.log("Hatch Admin ");
+      
+    }
+    if(userRole.includes('ORG-ADMIN')){
+      navigate('org/dashboard')
+       console.log("Org Admin ");
+
+     }
   }
 
   return (

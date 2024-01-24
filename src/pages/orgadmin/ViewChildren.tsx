@@ -10,31 +10,23 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import EditIcon from '@mui/icons-material/Edit';
 
-import PageHeader from "../components/PageHeader"
-import CommonSelect from "../components/CommonSelect"
-import InputWithSearch from "../components/InputWithSearch"
-import { SchoolList } from "../dummyData/SchoolList"
-import { ClassList } from "../dummyData/ClassList"
-import { StatusList } from "../dummyData/StatusList"
-import Footer from "../components/Layout/Footer"
-import crossImg from '../assets/images/insight/red-close.png'
-
-// import HeaderButton from "../components/HeaderButton"
-// import { OrgnizationList } from "../dummyData/OrgnizationList"
+import PageHeader from "../../components/PageHeader"
+import CommonSelect from "../../components/CommonSelect"
+import InputWithSearch from "../../components/InputWithSearch"
+import { SchoolList } from "../../dummyData/SchoolList"
+import { ClassList } from "../../dummyData/ClassList"
+import { StatusList } from "../../dummyData/StatusList"
+import Footer from "../../components/Layout/Footer"
+import crossImg from '../../assets/images/insight/red-close.png'
 
 function ViewChildren() {
-    // coloums
+    // coloums Data
     const cols: GridColDef[] = [
-
-
-        {
-            field: 'name',
-            headerName: 'Name',
-            width: 250,
-        },
+        { field: 'name', headerName: 'Name', width: 250 },
         { field: 'age', headerName: 'Age', width: 150 },
         {
-            field: 'school', headerName: 'School', width: 250, renderCell: ( params ) => {
+            field: 'school', headerName: 'School', width: 250,
+            renderCell: () => {
                 return <>
                     <Box >
                         <CommonSelect bg_color="#eeeeee" list={SchoolList} labelName="" />
@@ -43,7 +35,8 @@ function ViewChildren() {
             }
         },
         {
-            field: 'class', headerName: 'Class', width: 250, renderCell: ( params ) => {
+            field: 'class', headerName: 'Class', width: 250,
+            renderCell: () => {
                 return <>
                     <Box>
                         <CommonSelect bg_color="#eeeeee" list={ClassList} labelName="" />
@@ -51,9 +44,12 @@ function ViewChildren() {
                 </>
             }
         },
-        { field: 'educational_journey', headerName: 'Educational Journey', width: 200 },
         {
-            field: 'photos', headerName: 'Photos', width: 200, renderCell: ( params ) => {
+            field: 'educational_journey', headerName: 'Educational Journey', width: 200
+        },
+        {
+            field: 'photos', headerName: 'Photos', width: 200,
+            renderCell: () => {
                 return <>
                     <Box>
                         <Link style={{ textDecoration: 'none' }} to={'https://rmsstaging.hatchearlychildhood.com/insightchild/edit/class_id/MTMyODk0/child_id/MjE4NTczOA=='}>Has Photo</Link>
@@ -62,17 +58,18 @@ function ViewChildren() {
             }
         },
         {
-            field: 'hatchsync_status', headerName: 'HatchSync Status', width: 150, renderCell: ( params ) => {
+            field: 'hatchsync_status', headerName: 'HatchSync Status', width: 150,
+            renderCell: () => {
                 return <>
                     <Box>
-                        {/* <Avatar alt="Remy Sharp" src={crossImg} sx={{ width: '100px' }} /> */}
                         <img src={crossImg} alt="" width={'40px'} />
                     </Box>
                 </>
             }
         },
         {
-            field: 'activation', headerName: 'Activation', width: 120, renderCell: ( params ) => {
+            field: 'activation', headerName: 'Activation', width: 120,
+            renderCell: () => {
                 return <>
                     <Box>
                         <Link style={{ textDecoration: 'none' }} to={''}>Deactivate
@@ -82,7 +79,8 @@ function ViewChildren() {
             }
         },
         {
-            field: 'edit', headerName: 'Edit', width: 180, renderCell: ( params ) => {
+            field: 'edit', headerName: 'Edit', width: 180,
+            renderCell: () => {
                 return <>
                     <Box>
                         <Button size="small"
@@ -103,6 +101,7 @@ function ViewChildren() {
         },
     ]
 
+    //Row data
     const rows = [
         {
             id: 1,
@@ -206,7 +205,7 @@ function ViewChildren() {
             age: '6y 2m',
             school: 'SP jucj  dkfnkd ',
             class: 'USA_GNF organization',
-            educational_journey: 'Ignite, IgniteTable',
+            educational_journey: 'IgniteTable',
             Photos: 'yes',
             hatchsync_status: 'hatchsync_status',
             Activation: 'Activation',
@@ -242,7 +241,7 @@ function ViewChildren() {
             age: '6y 2m',
             school: 'SP jucj  dkfnkd ',
             class: 'USA_GNF organization',
-            educational_journey: 'Ignite, IgniteTable',
+            educational_journey: 'IgniteTable',
             Photos: 'yes',
             hatchsync_status: 'hatchsync_status',
             Activation: 'Activation',
@@ -304,6 +303,7 @@ function ViewChildren() {
                 </Stack>
 
                 <Box>
+                    {/* Filter Section START */}
                     <Grid container>
                         <Grid item xs={10}>
                             <Stack direction={{ lg: 'row', xs: 'column' }} gap={2}>
@@ -325,6 +325,8 @@ function ViewChildren() {
                             </Box>
                         </Grid>
                     </Grid>
+                    {/* Filter Section START */}
+
                     <Stack direction={'row'} gap={2} mt={4} mb={6}>
                         <Button variant="contained"
                             sx={{
@@ -357,13 +359,12 @@ function ViewChildren() {
                         </Button>
                     </Stack>
                 </Box>
-                <Box component='div'>
+                <Box>
                     {/* DataGrid */}
                     <Box sx={{ height: 500, width: "100%" }}>
                         <DataGrid
                             rows={rows}
-                            // getRowHeight={() => 'auto'}
-                            // rowHeight={80}
+                            // Customization of Table DataGrid
                             sx={{
                                 '& .MuiBox-root': {
                                     width: '100%',
@@ -392,29 +393,23 @@ function ViewChildren() {
                                 '& .MuiTablePagination-root .MuiToolbar-root p': {
                                     margin: 0
                                 },
-                             
-
-
                             }}
                             columns={cols}
                             initialState={{
                                 pagination: {
                                     paginationModel: {
-                                        pageSize: 10
+                                        pageSize: 10       /* renge for no of rows displyed in table */
                                     }
                                 }
                             }}
-                            pageSizeOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}
+                            pageSizeOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}   // limit for display in dropdown of "Rows per page:
                             checkboxSelection
                             disableRowSelectionOnClick
                         >
                         </DataGrid>
                     </Box>
                 </Box>
-
             </Box>
-
-
             <Footer />
         </Box>
     )

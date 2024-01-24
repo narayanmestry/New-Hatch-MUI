@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 import { Avatar, Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, InputLabel, Radio, RadioGroup, Stack, TextField, Typography } from "@mui/material";
 
-import Footer from "../components/Layout/Footer";
-import PageHeader from "../components/PageHeader";
+import Footer from "../../components/Layout/Footer";
+import PageHeader from "../../components/PageHeader";
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import PublishIcon from '@mui/icons-material/Publish';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import CommonSelect from "../components/CommonSelect";
-import { SchoolList } from "../dummyData/SchoolList";
+import CommonSelect from "../../components/CommonSelect";
+import { SchoolList } from "../../dummyData/SchoolList";
 import { useState } from "react";
 
 function AddChild() {
