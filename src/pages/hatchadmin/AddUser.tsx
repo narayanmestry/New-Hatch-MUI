@@ -3,10 +3,8 @@ import { Box, Button, FormControl, Grid, InputLabel, TextField } from "@mui/mate
 
 import { SubmitHandler, useForm } from "react-hook-form"
 
-import PageHeader from "../components/PageHeader"
-import addUserImg from '../assets/Chalkboard_1.png'
-
-
+import PageHeader from "../../components/PageHeader"
+import addUserImg from '../../assets/Chalkboard_1.png'
 type addUserFormValues = {
     org_name: string
     school_name: string
@@ -15,7 +13,6 @@ type addUserFormValues = {
     email: string
     role: string
 }
-
 function AddUser() {
     const { register, handleSubmit } = useForm<addUserFormValues>();
 

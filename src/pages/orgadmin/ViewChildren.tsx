@@ -10,13 +10,13 @@ import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOu
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 import EditIcon from "@mui/icons-material/Edit";
 
-import PageHeader from "../components/PageHeader";
-import CommonSelect from "../components/CommonSelect";
-import InputWithSearch from "../components/InputWithSearch";
-import { SchoolList } from "../dummyData/SchoolList";
-import { ClassList } from "../dummyData/ClassList";
-import { StatusList } from "../dummyData/StatusList";
-import Footer from "../components/Layout/Footer";
+import PageHeader from "../../components/PageHeader";
+import CommonSelect from "../../components/CommonSelect";
+import InputWithSearch from "../../components/InputWithSearch";
+import { SchoolList } from "../../dummyData/SchoolList";
+import { ClassList } from "../../dummyData/ClassList";
+import { StatusList } from "../../dummyData/StatusList";
+import Footer from "../../components/Layout/Footer";
 import crossImg from "../assets/images/insight/red-close.png";
 
 // import HeaderButton from "../components/HeaderButton"

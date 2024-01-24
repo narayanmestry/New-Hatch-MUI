@@ -1,14 +1,14 @@
 import { Box, Grid } from '@mui/material'
 import { DataGrid, GridColDef } from "@mui/x-data-grid"
 
-import PageHeader from '../components/PageHeader'
-import CommonSelect from '../components/CommonSelect'
-import InputWithSearch from '../components/InputWithSearch'
-import { StatusList } from '../dummyData/StatusList'
-import { LicenceFeaturesList } from '../dummyData/LicenceFeaturesList'
-import { ProductTypeList } from '../dummyData/ProductTypeList'
-import { PartnerShipData } from '../dummyData/PartnerShipData'
-import Footer from '../components/Layout/Footer'
+import PageHeader from '../../components/PageHeader'
+import CommonSelect from '../../components/CommonSelect'
+import InputWithSearch from '../../components/InputWithSearch'
+import { StatusList } from '../../dummyData/StatusList'
+import { LicenceFeaturesList } from '../../dummyData/LicenceFeaturesList'
+import { ProductTypeList } from '../../dummyData/ProductTypeList'
+import { PartnerShipData } from '../../dummyData/PartnerShipData'
+import Footer from '../../components/Layout/Footer'
 
 function ViewAllOrganization() {
     const cols: GridColDef[] = [

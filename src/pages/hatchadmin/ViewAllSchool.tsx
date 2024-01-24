@@ -2,12 +2,12 @@ import { Box, Grid } from "@mui/material"
 import { DataGrid, GridColDef } from "@mui/x-data-grid"
 
 
-import PageHeader from "../components/PageHeader"
-import CommonSelect from "../components/CommonSelect"
-import InputWithSearch from "../components/InputWithSearch"
-import { OrgnizationList } from "../dummyData/OrgnizationList"
-import { StatusList } from "../dummyData/StatusList"
-import Footer from "../components/Layout/Footer"
+import PageHeader from "../../components/PageHeader"
+import CommonSelect from "../../components/CommonSelect"
+import InputWithSearch from "../../components/InputWithSearch"
+import { OrgnizationList } from "../../dummyData/OrgnizationList"
+import { StatusList } from "../../dummyData/StatusList"
+import Footer from "../../components/Layout/Footer"
 
 function ViewAllSchool() {
 

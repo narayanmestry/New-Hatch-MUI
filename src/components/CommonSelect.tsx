@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-import  FormControl from "@mui/material/FormControl"
-import  MenuItem from "@mui/material/MenuItem"
-import  Select from "@mui/material/Select"
-import  Typography from "@mui/material/Typography"
+import FormControl from "@mui/material/FormControl"
+import MenuItem from "@mui/material/MenuItem"
+import Select from "@mui/material/Select"
+import Typography from "@mui/material/Typography"
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -18,8 +18,12 @@ function CommonSelect( props: OptionList ) {
     return (
         <FormControl sx={{ width: '100%' }}>
             {
-                props.labelName && <Typography fontWeight={600}
+                props.labelName &&
+                <Typography
                     sx={{
+                        color: '#000',
+                        fontWeight:400,
+                        fontFamily:'chivo',
                         '@media (max-width: 1300px)': {
                             fontSize: '14px'
                         },
@@ -62,7 +66,7 @@ function CommonSelect( props: OptionList ) {
 CommonSelect.prototype = {
     labelName: PropTypes.string,
     list: PropTypes.array,
-    bg_color:PropTypes.string
+    bg_color: PropTypes.string
 
 }
 export default CommonSelect
