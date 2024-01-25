@@ -1,4 +1,3 @@
-import DvrIcon from '@mui/icons-material/Dvr';
 const OrgAdminNavbarData = [
     {
         'id': 1,
@@ -50,7 +49,7 @@ const OrgAdminNavbarData = [
                         'id': 3,
                         'title': 'Child Play Time',
                         'icon': '',
-                        'link': ''
+                        'link': 'ignite-child-play-time'
                     }
                 ]
             },

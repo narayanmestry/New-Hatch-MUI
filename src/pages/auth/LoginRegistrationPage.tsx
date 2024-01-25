@@ -32,7 +32,7 @@ function LoginRegistrationPage() {
       
     }
     if(userRole.includes('ORG-ADMIN')){
-      navigate('org/dashboard')
+      navigate('org/view-children')
        console.log("Org Admin ");
 
      }

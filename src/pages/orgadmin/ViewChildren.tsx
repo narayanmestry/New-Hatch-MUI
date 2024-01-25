@@ -17,10 +17,7 @@ import { SchoolList } from "../../dummyData/SchoolList";
 import { ClassList } from "../../dummyData/ClassList";
 import { StatusList } from "../../dummyData/StatusList";
 import Footer from "../../components/Layout/Footer";
-import crossImg from "../assets/images/insight/red-close.png";
-
-// import HeaderButton from "../components/HeaderButton"
-// import { OrgnizationList } from "../dummyData/OrgnizationList"
+import crossImg from "../../assets/images/insight/red-close.png";
 
 function ViewChildren() {
   // coloums
@@ -35,7 +32,7 @@ function ViewChildren() {
       field: "school",
       headerName: "School",
       flex: 1,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
           <>
             <Box>
@@ -49,7 +46,7 @@ function ViewChildren() {
       field: "class",
       headerName: "Class",
       flex: 1,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
           <>
             <Box bgcolor={'#fff'}>
@@ -68,14 +65,14 @@ function ViewChildren() {
       field: "photos",
       headerName: "Photos",
       flex: 1,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
           <>
             <Box>
               <Link
                 style={{ textDecoration: "none" }}
                 to={
-                  "https://rmsstaging.hatchearlychildhood.com/insightchild/edit/class_id/MTMyODk0/child_id/MjE4NTczOA=="
+                  ""
                 }
               >
                 Has Photo
@@ -89,7 +86,7 @@ function ViewChildren() {
       field: "hatchsync_status",
       headerName: "HatchSync Status",
       flex: 1,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
           <>
             <Box>
@@ -104,7 +101,7 @@ function ViewChildren() {
       field: "activation",
       headerName: "Activation",
       flex: 1,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
           <>
             <Box>
@@ -120,7 +117,7 @@ function ViewChildren() {
       field: "edit",
       headerName: "Edit",
       flex: 1,
-      renderCell: (params) => {
+      renderCell: () => {
         return (
           <>
             <Box>
@@ -460,9 +457,9 @@ function ViewChildren() {
                   width: "100%",
                 },
                 "& .MuiDataGrid-row.Mui-selected, & .MuiDataGrid-row.Mui-selected.Mui-hovered, & .MuiDataGrid-row.Mui-hovered":
-                  {
-                    background: "transparent",
-                  },
+                {
+                  background: "transparent",
+                },
 
                 "& .MuiDataGrid-row .MuiDataGrid-cell:nth-child(2)": {
                   color: "#248dc1",
@@ -471,9 +468,9 @@ function ViewChildren() {
                   color: "#248dc1",
                 },
                 "& .MuiDataGrid-main .MuiDataGrid-virtualScroller .MuiDataGrid-row:nth-child(odd)":
-                  {
-                    background: "#f2f2f2",
-                  },
+                {
+                  background: "#f2f2f2",
+                },
                 "& .MuiDataGrid-withBorderColor": {
                   borderColor: "none",
                 },
