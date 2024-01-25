@@ -1,75 +1,14 @@
-// import { common } from '@mui/material/colors';
+import * as React from 'react';
 import hatchLogo from '../../assets/insights_logo.png'
-// import HatchAdminNavbarData from '../../dummyData/HatchAdminNavbarData';
 import { NavLink } from 'react-router-dom';
-
-
-// function Navbar() {
-//     const navbarData = HatchAdminNavbarData;
-//     return (
-//         <nav className="navbar navbar-expand-lg py-0">
-//             <div className="container-fluid">
-//                 <div className='logo-wrapper ms-2'>
-//                     <NavLink to={'/dashboard'}><img src={hatchLogo} alt="" className='w-100' /></NavLink>
-//                 </div>
-//                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-//                     <span className="navbar-toggler-icon"></span>
-//                 </button>
-//                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
-//                     <ul className="navbar-nav ms-auto">
-//                         {
-//                             navbarData.map( ( menu, index ) => (
-//                                 <li key={index} className="nav-item dropdown py-3" color={common.black}>
-//                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-//                                         {menu.menuTitle}
-//                                     </a>
-//                                     <ul className="dropdown-menu p-0 m-0">
-//                                         {
-//                                             menu.subMenu.map( ( submenu, index ) => (
-//                                                 <NavLink className="dropdown-item py-2" to={submenu.urlLink} key={index}>
-//                                                     {
-//                                                         submenu.subMenuTitle
-//                                                     }
-//                                                 </NavLink>
-//                                             ) )
-//                                         }
-//                                     </ul>
-//                                 </li>
-//                             ) )
-//                         }
-//                     </ul>
-//                     <div className='me-2 d-flex align-items-center mt-1' style={{ gap: '10px' }}>
-//                         <button className='blue-btn py-0 px-3'>
-//                             <div className='same-view-icon'></div>
-//                             <div>Sameview</div>
-//                         </button>
-//                         <button className='blue-btn py-0 px-3 ml-3'>
-//                             <div className='emulate-icon'></div>
-//                             <div>Emulate</div>
-//                         </button>
-//                     </div>
-//                 </div>
-//             </div>
-//         </nav>
-//     )
-// }
-
-// export default Navbar
-
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
-// import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
-import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-import Paper from '@mui/material/Paper';
-import { Grid, Stack, Typography, colors } from '@mui/material';
+import { Grid, Stack, Typography} from '@mui/material';
 import OrgAdminNavbarData from '../../dummyData/OrgAdminNavbarData';
 
 const Navbar = () => {
@@ -77,8 +16,6 @@ const Navbar = () => {
     // main-menu
     // sub-menu
     // nested-sub-menu
-
-
     return (
         <AppBar position="static" sx={{ bgcolor: '#fff', color: '#000' }}>
             <Toolbar>
