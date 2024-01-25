@@ -7,13 +7,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
-import PopupState, { bindTrigger, bindMenu, bindHover } from 'material-ui-popup-state';
-import { Grid, Icon, Stack, Typography } from '@mui/material';
+import PopupState, { bindTrigger, bindMenu, bindHover, bindFocus } from 'material-ui-popup-state';
+import { Grid, Icon, MenuItem, Stack, Typography } from '@mui/material';
 import OrgAdminNavbarData from '../../dummyData/OrgAdminNavbarData';
 import MaterialIcon from '../MaterialIcon'
+import HoverMenu from 'material-ui-popup-state/HoverMenu';
 const Navbar = () => {
     console.log( "OrgAdminNavbarData----", OrgAdminNavbarData );
-    // main-menu
+    // main-menu            
     // sub-menu
     // nested-sub-menu
 
@@ -38,6 +39,8 @@ const Navbar = () => {
                                 }
                                 return (
                                     <>
+                                        {/*
+                                        ******************This popup is onClick**************
                                         <PopupState key={index} variant="popover" popupId="demo-popup-menu">
                                             {( popupState ) => (
                                                 <React.Fragment>
@@ -55,7 +58,7 @@ const Navbar = () => {
                                                         }} >
                                                         {menu.title}
                                                     </Button>
-                                                    <Menu {...bindMenu( popupState )}
+                                                    <Menu 
                                                         sx={{
 
                                                             '& .MuiList-root': {
@@ -129,7 +132,108 @@ const Navbar = () => {
                                                     </Menu>
                                                 </React.Fragment>
                                             )}
+                                        </PopupState> */}
+
+                                        {/*******************This Popup is onSelect***************/}
+                                        <PopupState variant="popover" popupId="demoMenu">
+                                            {( popupState ) => (
+                                                <React.Fragment>
+                                                    <Button
+                                                        sx={{
+                                                            backgroundColor: 'none',
+                                                            padding: '20px 10px',
+                                                            fontSize: '14px',
+                                                            fontWeight: 100,
+                                                            color: '#000',
+                                                            fontFamily: 'Nunito',
+                                                            '&:hover': {
+                                                                backgroundColor: '#e5e5e5'
+                                                            }
+                                                        }}
+                                                        variant="text"
+                                                        {...bindHover( popupState )}
+                                                        {...bindFocus( popupState )}
+                                                    >
+                                                        {menu.title}
+                                                    </Button>
+                                                    <HoverMenu
+                                                        sx={{
+
+                                                            '& .MuiList-root': {
+                                                                maxHeight: 'none'
+                                                            },
+                                                            '& .MuiList-root.MuiMenu-list': {
+                                                                padding: 0,
+                                                            },
+
+                                                        }}
+                                                        {...bindMenu( popupState )}
+                                                        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                                                        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                                                    >
+                                                        <Grid container width={isSingleCol() ? 400 : 800} p={1} className=''>
+                                                            {
+                                                                menu.subMenu.map( ( submemu, index ) => {
+                                                                    return (
+                                                                        <>
+                                                                            {
+                                                                                isSingleCol() ?
+                                                                                    <Grid item xs={12} key={index} p={1}>
+                                                                                        <Box p={2} sx={{ backgroundColor: '#e8fafe', borderRadius: '7px', height: '100%' }}>
+
+                                                                                            <Stack direction={'row'} gap={1}>
+                                                                                                <MaterialIcon iconName={submemu.icon} /> <Typography variant='h1' fontSize={20} fontWeight={600}> {submemu.title}</Typography></Stack>
+                                                                                            <Stack direction={'column'} gap={1} mt={1}>
+                                                                                                {
+                                                                                                    submemu.subMenu.map( ( nested_submenu, index ) => (
+                                                                                                        <Box className="link">
+                                                                                                            <NavLink to={nested_submenu.link} key={index} onClick={popupState.close} >
+                                                                                                                {
+                                                                                                                    nested_submenu.title
+                                                                                                                }
+                                                                                                            </NavLink>
+                                                                                                        </Box>
+                                                                                                    ) )
+                                                                                                }
+                                                                                            </Stack>
+                                                                                        </Box>
+                                                                                    </Grid>
+                                                                                    :
+                                                                                    <Grid item xs={6} key={index} p={1}>
+                                                                                        <Box p={2} sx={{ backgroundColor: '#e8fafe', borderRadius: '7px', height: '100%' }}>
+                                                                                            <Stack direction={'row'} gap={1}><MaterialIcon iconName={submemu.icon} /> <Typography variant='h1' fontSize={20} fontWeight={600}>{submemu.title}</Typography></Stack>
+                                                                                            <Stack direction={'column'} gap={1} mt={1}>
+                                                                                                {
+                                                                                                    submemu.subMenu.map( ( nested_submenu, index ) => (
+                                                                                                        <Box className="link">
+                                                                                                            <NavLink
+                                                                                                                to={nested_submenu.link}
+                                                                                                                key={index}
+                                                                                                                onClick={popupState.close}
+                                                                                                            >
+                                                                                                                {
+                                                                                                                    nested_submenu.title
+                                                                                                                }
+                                                                                                            </NavLink>
+                                                                                                        </Box>
+                                                                                                    ) )
+                                                                                                }
+                                                                                            </Stack>
+                                                                                        </Box>
+                                                                                    </Grid>
+                                                                            }
+
+                                                                        </>
+
+                                                                    )
+                                                                } )
+                                                            }
+                                                        </Grid>
+                                                    </HoverMenu>
+                                                </React.Fragment>
+                                            )}
                                         </PopupState>
+
                                     </>
                                 )
                             } )
