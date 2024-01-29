@@ -1,3 +1,5 @@
+import DvrIcon from '@mui/icons-material/Dvr';
+
 const OrgAdminNavbarData = [
     {
         'id': 1,
@@ -6,7 +8,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 1,
                 'title': 'My Dashboard',
-                'icon': "{}",
+                'icon': "DvrIcon",
                 "subMenu": [
                     {
                         'id': 1,
@@ -31,7 +33,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 1,
                 'title': 'Playtime Reports',
-                'icon': '',
+                'icon': 'WatchLaterIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -56,7 +58,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 2,
                 'title': 'Progress Reports',
-                'icon': '',
+                'icon': 'LeaderboardIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -81,7 +83,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 3,
                 'title': 'Others Reports',
-                'icon': '',
+                'icon': 'PendingIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -106,7 +108,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 4,
                 'title': 'Entry Reports',
-                'icon': '',
+                'icon': 'StarsIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -131,7 +133,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 5,
                 'title': 'Setup Reports',
-                'icon': '',
+                'icon': 'HandymanIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -150,7 +152,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 6,
                 'title': 'Utilization Reports',
-                'icon': '',
+                'icon': 'OfflineBoltIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -181,7 +183,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 6,
                 'title': 'Export',
-                'icon': '',
+                'icon': 'DescriptionIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -219,7 +221,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 1,
                 'title': 'Playtime Reports',
-                'icon': '',
+                'icon': 'WatchLaterIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -244,7 +246,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 2,
                 'title': 'Progress Reports',
-                'icon': '',
+                'icon': 'LeaderboardIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -269,7 +271,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 3,
                 'title': 'Setup Reports',
-                'icon': '',
+                'icon': 'HandymanIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -288,7 +290,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 4,
                 'title': 'Utilization Reports',
-                'icon': '',
+                'icon': 'OfflineBoltIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -307,7 +309,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 5,
                 'title': 'Others Reports',
-                'icon': '',
+                'icon': 'PendingIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -339,7 +341,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 1,
                 'title': 'Schools',
-                'icon': '',
+                'icon': 'TempleHinduIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -358,7 +360,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 2,
                 'title': 'Educators',
-                'icon': '',
+                'icon': 'Person2Icon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -377,7 +379,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 3,
                 'title': 'Classes',
-                'icon': '',
+                'icon': 'AccountTreeSharpIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -396,7 +398,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 4,
                 'title': 'Children',
-                'icon': '',
+                'icon': 'AccountCircleIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -427,7 +429,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 5,
                 'title': 'Imports',
-                'icon': '',
+                'icon': 'DescriptionIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -457,7 +459,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 6,
                 'title': 'Settings',
-                'icon': '',
+                'icon': 'SettingsIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -481,8 +483,8 @@ const OrgAdminNavbarData = [
         "subMenu": [
             {
                 'id': 1,
-                'title': 'My Dashboard',
-                'icon': '',
+                'title': 'Ignite Skill Support',
+                'icon': 'LightbulbIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -513,7 +515,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 2,
                 'title': 'IgniteTable Skill Support',
-                'icon': '',
+                'icon': 'LightbulbIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -538,7 +540,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 1,
                 'title': 'Ignite Learning',
-                'icon': '',
+                'icon': 'ImportContactsIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -580,7 +582,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 2,
                 'title': 'Support & Installation',
-                'icon': '',
+                'icon': 'BuildIcon',
                 "subMenu": [
                     {
                         'id': 1,
@@ -627,7 +629,7 @@ const OrgAdminNavbarData = [
             {
                 'id': 3,
                 'title': 'Onboarding & Setup',
-                'icon': '',
+                'icon': 'SettingsIcon',
                 "subMenu": [
                     {
                         'id': 1,

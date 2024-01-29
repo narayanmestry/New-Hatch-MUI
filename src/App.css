@@ -1,58 +1,87 @@
 .login-container .MuiInputBase-root input {
   padding: 8px 10px;
 }
+
+/* NAvbar  */
+.MuiMenu-list .link a {
+  font-family: 'chivo';
+  text-decoration: none;
+  color: #505050;
+  padding-left: 30px;
+
+}
+
+.MuiMenu-list .link:hover {
+  background-color: #d0e9f4 !important;
+  color: #248dc1 !important;
+}
+
 /* Common Dropdown overrided Stylesheet */
 .MuiList-root {
   height: auto;
   background-color: #ffffff;
   max-height: 350px;
 }
+
 .MuiList-root .MuiButtonBase-root .Mui-selected {
   background-color: #ffffff;
 }
+
 .MuiList-root li:hover {
   background-color: #c7c7c8;
 }
+
 /* Button  */
-.header-btn.MuiButtonBase-root{
- color: #fff;
- text-transform: none;
+.header-btn.MuiButtonBase-root {
+  color: #fff;
+  text-transform: none;
 }
+
 .header-btn .MuiTouchRipple-root {
   background-color: transparent;
   color: #fff;
 }
+
 /* DataGrid  */
-.MuiButtonBase-root.MuiCheckbox-root.Mui-checked{
+.MuiButtonBase-root.MuiCheckbox-root.Mui-checked {
   color: #00af51 !important;
 }
-.MuiDataGrid-cell{
+
+.MuiDataGrid-cell {
   padding: 0;
 }
-.MuiDataGrid-cell:focus, 
+
+.MuiDataGrid-cell:focus,
 .MuiDataGrid-columnHeader:focus,
 .MuiDataGrid-columnHeader:focus-within,
 .MuiDataGrid-cell:focus-within {
-  outline: none !important;     /* This is use for remove the outline colour after click on cell */
+  outline: none !important;
+  /* This is use for remove the outline colour after click on cell */
 }
-.login-container .MuiInputBase-root input{
-    padding: 8px 10px;
+
+.login-container .MuiInputBase-root input {
+  padding: 8px 10px;
 }
+
 /* Common Dropdown overrided Stylesheet */
-.MuiList-root{  
+.MuiList-root {
   height: auto;
   background-color: #ffffff;
   max-height: 350px;
 }
-.MuiList-root .MuiButtonBase-root .Mui-selected{
-  background-color:  #ffffff;
+
+.MuiList-root .MuiButtonBase-root .Mui-selected {
+  background-color: #ffffff;
 }
-.MuiList-root li{
+
+.MuiList-root li {
   font-family: 'chivo';
 }
-.MuiList-root li:hover{
-  background-color:  #c7c7c8;
+
+.MuiList-root li:hover {
+  background-color: #c7c7c8;
 }
+
 /*common for checkbox label */
 .MuiFormControlLabel-label {
   font-family: Chivo !important;
