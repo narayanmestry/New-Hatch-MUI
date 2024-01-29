@@ -364,7 +364,7 @@ function ViewChildren() {
         </Stack>
 
         <Box>
-          <Grid container>
+          <Grid container className="filter-section">
             <Grid item xs={10}>
               <Stack direction={{ lg: "row", xs: "column" }} gap={2}>
                 <Stack direction={"row"} gap={2} width={"100%"}>

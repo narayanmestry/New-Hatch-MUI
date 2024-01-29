@@ -3,9 +3,10 @@
 }
 
 /* NAvbar  */
-.MuiMenu-list .link a {
+.MuiMenu-list .link a,
+.MuiAccordionDetails-root .link a {
   font-family: 'chivo';
-  text-decoration: none;
+  text-decoration: none !important;
   color: #505050;
   padding-left: 30px;
 
@@ -81,6 +82,17 @@
 .MuiList-root li:hover {
   background-color: #c7c7c8;
 }
+@media screen and (max-width: 1385px) {
+  .filter-section .MuiTypography-root label{
+    font-size: 14px;
+  } 
+}
+@media screen and (min-width: 1200px) and (max-width: 1260px) {
+  .filter-section .MuiTypography-root label{
+    font-size: 12px;
+  } 
+}
+/* */
 
 /*common for checkbox label */
 .MuiFormControlLabel-label {

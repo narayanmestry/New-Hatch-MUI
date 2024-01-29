@@ -8,11 +8,11 @@ function RootLayout() {
       <Box>
         <Navbar />
       </Box>
-      <Box>
+      <Box sx={{ zIndex: 0 }}>
         <Outlet />
       </Box>
     </Box>
-  ) 
+  )
 }
 
 export default RootLayout

@@ -1,29 +1,50 @@
-import * as React from 'react';
-import hatchLogo from '../../assets/insights_logo.png'
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import PopupState, { bindMenu, bindHover, bindFocus } from 'material-ui-popup-state';
-import { Grid, Stack, Typography } from '@mui/material';
-import OrgAdminNavbarData from '../../dummyData/OrgAdminNavbarData';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import MaterialIcon from '../MaterialIcon'
 import HoverMenu from 'material-ui-popup-state/HoverMenu';
+
+import MenuIcon from '@mui/icons-material/Menu';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+
+import PopupState, { bindMenu, bindHover, bindFocus } from 'material-ui-popup-state';
+
+import hatchLogo from '../../assets/insights_logo.png'
+import OrgAdminNavbarData from '../../dummyData/OrgAdminNavbarData';
+
 const Navbar = () => {
     console.log( "OrgAdminNavbarData----", OrgAdminNavbarData );
+    const [openNavbar, setOpenNavbar] = useState( false );
+    const [expanded, setExpanded] = React.useState<string | false>( false );
+
+    const handleChange =
+        ( panel: string ) => ( event: React.SyntheticEvent, isExpanded: boolean ) => {
+            setExpanded( isExpanded ? panel : false );
+        };
+
+    console.log( "----->>>", expanded );
+
     // main-menu            
     // sub-menu
     // nested-sub-menu
     return (
-        <AppBar position="static" sx={{ bgcolor: '#fff', color: '#000' }} className='orgadmin-navbar'>
+        <AppBar position="relative" sx={{ bgcolor: '#fff', color: '#000' }} className='orgadmin-navbar'>
             <Toolbar>
                 <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
                     <Box>
                         <NavLink to={'/dashboard'}><img src={hatchLogo} alt="" className='w-100' /></NavLink>
                     </Box>
-                    <Stack direction={'row'} gap={1}>
+                    <Stack direction={'row'} gap={1} sx={{ display: { xs: 'none', lg: 'block' } }}>
                         {
                             OrgAdminNavbarData.map( ( menu, index ) => {
                                 const subMenuCount = menu.subMenu.length
@@ -107,11 +128,12 @@ const Navbar = () => {
                                                                                             <Stack direction={'column'} gap={1} mt={1}>
                                                                                                 {
                                                                                                     submemu.subMenu.map( ( nested_submenu, index ) => (
-                                                                                                        <Box className="link">
+                                                                                                        <Box className="link" >
                                                                                                             <NavLink
                                                                                                                 to={nested_submenu.link}
                                                                                                                 key={index}
                                                                                                                 onClick={popupState.close}
+
                                                                                                             >
                                                                                                                 {
                                                                                                                     nested_submenu.title
@@ -142,8 +164,76 @@ const Navbar = () => {
                         }
 
                     </Stack>
+                    <Button variant='text' sx={{ display: { xs: 'block', lg: 'none' } }} onClick={() => {
+                        setOpenNavbar( !openNavbar )
+                    }}>
+                        <MenuIcon />
+                    </Button>
+
                 </Stack>
             </Toolbar>
+            {
+                openNavbar && (
+                    <Box bgcolor={'#fff'} width={'100%'} sx={{ zIndex: 999, position: 'absolute', top: 65, display: { sm: 'block', lg: 'none' } }}>
+                        {
+                            OrgAdminNavbarData.map( ( menu, index ) => {
+                                console.log( "Condition ---- ", expanded === `expanded${index}` );
+
+                                return (
+                                    <Accordion expanded={expanded === `panel${index}`} onChange={handleChange( `panel${index}` )}>
+                                        <AccordionSummary
+                                            expandIcon={expanded === `panel${index}` ? <RemoveIcon /> : <AddIcon />}
+                                            aria-controls="panel1-content"
+                                            id={`panel${index}-header`}
+
+                                        >
+                                            {menu.title}
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Grid container>
+                                                {
+                                                    menu.subMenu.map( ( submenu, index ) => (
+                                                        <Grid item key={index} xs={12} sm={6} p={1}>
+                                                            <Box p={2} sx={{ backgroundColor: '#e8fafe', borderRadius: '7px', height: '100%' }}>
+                                                                <Stack direction={'row'} gap={1}><MaterialIcon iconName={submenu.icon} /> <Typography variant='h1' fontSize={20} fontWeight={600}>{submenu.title}</Typography></Stack>
+                                                                <Stack direction={'column'} gap={1} mt={1}>
+                                                                    {
+                                                                        submenu.subMenu.map( ( nested_submenu, index ) => (
+                                                                            <Box className="link">
+                                                                                <NavLink
+                                                                                    to={nested_submenu.link}
+                                                                                    key={index}
+                                                                                    onClick={() => { setOpenNavbar( false ) }}
+                                                                                >
+                                                                                    {
+                                                                                        nested_submenu.title
+                                                                                    }
+                                                                                </NavLink>
+                                                                            </Box>
+                                                                        ) )
+                                                                    }
+                                                                </Stack>
+                                                            </Box>
+
+
+                                                        </Grid>
+                                                    ) )
+                                                }
+                                            </Grid>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                )
+                            } )
+                        }
+
+
+
+
+
+
+                    </Box>
+                )
+            }
         </AppBar>
     );
 };
