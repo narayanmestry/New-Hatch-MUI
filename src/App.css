@@ -57,3 +57,18 @@
 .MuiFormControlLabel-label {
   font-family: Chivo !important;
 }
+/* custom slider css */
+.carousel-container .react-multiple-carousel__arrow {
+  opacity: 0;
+  background-color: #fff;
+}
+.carousel-container:hover .react-multiple-carousel__arrow {
+  opacity: 1;
+  background-color: #fff;
+}
+.react-multiple-carousel__arrow--left::before {
+  color: #000 !important;
+}
+.react-multiple-carousel__arrow--right::before {
+  color: #000 !important;
+}
