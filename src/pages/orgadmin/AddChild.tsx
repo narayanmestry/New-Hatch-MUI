@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import userProfile from '../../assets/images/insight/user-default.png'
 import { Avatar, Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, InputLabel, Radio, RadioGroup, Stack, TextField, Typography } from "@mui/material";
 
 import Footer from "../../components/Layout/Footer";
@@ -13,10 +13,10 @@ import { useState } from "react";
 
 function AddChild() {
 
-  const [selectedValue, setSelectedValue] = useState( 'english' );
+  const [selectedValue, setSelectedValue] = useState('english');
 
-  const handleChange = ( event: any ) => {
-    setSelectedValue( event.target.value );
+  const handleChange = (event: any) => {
+    setSelectedValue(event.target.value);
   };
   return (
     <>
@@ -101,9 +101,9 @@ function AddChild() {
                         <Box sx={{ fontFamily: "Chivo, sans-serif", color: "#111" }}>Education Jorney*</Box>
                         <Box>
                           <FormGroup >
-                            <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Ignite" />
-                            <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="IgniteTable" />
-                            <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="IgnitePanel" />
+                            <FormControlLabel control={<Checkbox disableRipple defaultChecked color="success" />} label="Ignite" />
+                            <FormControlLabel control={<Checkbox disableRipple defaultChecked color="success" />} label="IgniteTable" />
+                            <FormControlLabel control={<Checkbox disableRipple defaultChecked color="success" />} label="IgnitePanel" />
                           </FormGroup>
                         </Box>
                       </Grid>
@@ -168,7 +168,7 @@ function AddChild() {
                       <Grid item>
                         <Avatar
                           alt="Remy Sharp"
-                          src="src/assets/user-default.png"
+                          src={userProfile}
                           sx={{ width: 85, height: 85 }}
                         />
                       </Grid>
@@ -197,15 +197,20 @@ function AddChild() {
                     </Grid>
                     <Box sx={{ fontFamily: "Chivo, sans-serif", fontSize: "200px", color: "#111" }}>
                       <FormGroup>
-                        <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Use placeholder image" />
-                        <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Request photo from family member" />
+                        <FormControlLabel control={<Checkbox disableRipple defaultChecked color="success" />} label="Use placeholder image" />
+                        <FormControlLabel control={<Checkbox disableRipple defaultChecked color="success" />} label="Request photo from family member" />
                       </FormGroup>
                     </Box>
                   </Box>
                 </Grid>
                 <Grid item xs={9}>
                   <Box sx={{ display: "flex", justifyContent: "end" }}>
-                    <Button sx={{ backgroundColor: "#00af51", py: 1, borderRadius: "29px", fontWeight: 700, boxShadow: "2px 3px #dbdbdb", textTransform: "none", fontSize: "18px", mb: 2 }} variant="contained">
+                    <Button sx={{
+                      backgroundColor: "#00af51", py: 1, borderRadius: "29px", fontWeight: 700, boxShadow: "2px 3px #dbdbdb", textTransform: "none", fontSize: "18px", mb: 2,
+                      '&:hover': {
+                        backgroundColor: '#009143',
+                      },
+                    }} variant="contained">
                       Continue
                       <ChevronRightIcon sx={{ ml: 7 }} />
                     </Button>
