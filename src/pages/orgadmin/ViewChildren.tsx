@@ -336,36 +336,35 @@ function ViewChildren() {
         </Stack>
       </Stack>
       <Box mx={5}>
-        <Stack
-          direction={"row"}
-          justifyContent={"space-between"}
-          alignContent={"center"}
-          my={5}
-        >
-          <Typography fontFamily={"Chivo"}>
-            Find and edit children. To move children between classes, select the
-            new class from the dropdown in the child’s row
-          </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              background: "#00af51",
-              textTransform: "none",
-              fontFamily: "chivo",
-              borderRadius: "37px",
-              padding: "6px 32px",
-              "&:hover": {
-                background: "#009143",
-              },
-            }}
-          >
-            Import to Add Children
-          </Button>
-        </Stack>
+        <Grid container my={5}>
+          <Grid item xs={12} md={9}>
+            <Typography fontFamily={"Chivo"} pr={{xs:0,md:5}}>
+              Find and edit children. To move children between classes, select the
+              new class from the dropdown in the child’s row
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={3} mt={{xs:3,md:0}} textAlign={{xs:'start',md:'end'}}>
+            <Button
+              variant="contained"
+              sx={{
+                background: "#00af51",
+                textTransform: "none",
+                fontFamily: "chivo",
+                borderRadius: "37px",
+                padding: "6px 32px",
+                "&:hover": {
+                  background: "#009143",
+                },
+              }}
+            >
+              Import to Add Children
+            </Button>
+          </Grid>
+        </Grid>
 
         <Box>
           <Grid container className="filter-section">
-            <Grid item xs={10}>
+            <Grid item xs={12} lg={10}>
               <Stack direction={{ lg: "row", xs: "column" }} gap={2}>
                 <Stack direction={"row"} gap={2} width={"100%"}>
                   <CommonSelect
@@ -403,8 +402,13 @@ function ViewChildren() {
                 </Stack>
               </Stack>
             </Grid>
-            <Grid item xs={2}>
-              <Box sx={{ mt: 3, ml: 3 }} width={"90%"}>
+            <Grid item xs={12} lg={2} display={'flex'} alignItems={'end'}>
+              <Box
+                sx={{
+                  mt: { xs: 3, lg: 0 },
+                  ml: { xs: 0, lg: 3 },
+                  width: { xs: '32.2%', lg: '90%' },
+                }}>
                 <InputWithSearch placeholder="Search by Name" />
               </Box>
             </Grid>

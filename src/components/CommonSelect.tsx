@@ -22,10 +22,14 @@ function CommonSelect( props: OptionList ) {
                 <Typography
                     sx={{
                         color: '#000',
-                        fontWeight:400,
-                        fontFamily:'chivo',
-                        '@media (max-width: 1300px)': {
+                        fontWeight: 400,
+                        fontFamily: 'chivo',
+
+                        '@media (max-width: 1385px)': {
                             fontSize: '14px'
+                        },
+                        '@media (max-width: 1260px) and (min-width:1200px)': {
+                            fontSize: '12px'
                         },
                     }}>
                     <label htmlFor="" >{props.labelName}</label>
