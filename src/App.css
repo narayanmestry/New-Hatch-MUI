@@ -3,20 +3,20 @@
 }
 
 /* NAvbar  */
-.MuiMenu-list .link a,
-.MuiAccordionDetails-root .link a {
+#demoMenu .MuiMenu-list .link a,
+.orgadmin-navbar .MuiAccordionDetails-root .link a {
   font-family: 'chivo';
   text-decoration: none !important;
   color: #505050;
   padding-left: 30px;
-
 }
-
-.MuiMenu-list .link:hover {
+.orgadmin-navbar .MuiMenu-list .link:hover {
   background-color: #d0e9f4 !important;
   color: #248dc1 !important;
 }
-
+.orgadmin-navbar .MuiPaper-root.MuiAccordion-root.Mui-expanded{
+  margin: 0px !important;
+}
 /* Common Dropdown overrided Stylesheet */
 .MuiList-root {
   height: auto;
@@ -24,11 +24,11 @@
   max-height: 350px;
 }
 
-.MuiList-root .MuiButtonBase-root .Mui-selected {
+.orgadmin-navbar .MuiList-root .MuiButtonBase-root .Mui-selected {
   background-color: #ffffff;
 }
 
-.MuiList-root li:hover {
+.orgadmin-navbar .MuiList-root li:hover {
   background-color: #c7c7c8;
 }
 
@@ -44,11 +44,12 @@
 }
 
 /* DataGrid  */
-
+.MuiDataGrid-root{
+  border-color: transparent !important;
+}
 .MuiDataGrid-cell {
   padding: 0;
 }
-
 .MuiDataGrid-cell:focus,
 .MuiDataGrid-columnHeader:focus,
 .MuiDataGrid-columnHeader:focus-within,
@@ -57,9 +58,7 @@
   /* This is use for remove the outline colour after click on cell */
 }
 
-.login-container .MuiInputBase-root input {
-  padding: 8px 10px;
-}
+
 
 /* Common Dropdown overrided Stylesheet */
 .MuiList-root {

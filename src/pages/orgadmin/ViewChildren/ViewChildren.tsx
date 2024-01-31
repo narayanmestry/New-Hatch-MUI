@@ -6,17 +6,16 @@ import Box from "@mui/material/Box";
 
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 
-import PageHeader from "../../components/PageHeader";
-import CommonSelect from "../../components/CommonSelect";
-import InputWithSearch from "../../components/InputWithSearch";
-import { SchoolList } from "../../dummyData/SchoolList";
-import { ClassList } from "../../dummyData/ClassList";
-import { StatusList } from "../../dummyData/StatusList";
-import crossImg from "../../assets/images/insight/red-close.png";
-import CustomButton from "../../components/CustomButton";
+import PageHeader from "../../../components/PageHeader";
+import CommonSelect from "../../../components/CommonSelect";
+import InputWithSearch from "../../../components/InputWithSearch";
+import { SchoolList } from "../../../dummyData/SchoolList";
+import { ClassList } from "../../../dummyData/ClassList";
+import { StatusList } from "../../../dummyData/StatusList";
+import crossImg from "../../../assets/images/insight/red-close.png";
+import CustomButton from "../../../components/CustomButton";
+
 
 function ViewChildren() {
   function handleClick() {
@@ -123,23 +122,6 @@ function ViewChildren() {
         return (
           <>
             <Box>
-              {/* <Button
-                size="small"
-                variant="text"
-                sx={{
-                  textTransform: "none",
-                  padding: "8px 22px",
-                  borderRadius: "20px",
-                  "&:hover": {
-                    background: "#248dc1",
-                    color: "#fff",
-                  },
-                }}
-                startIcon={<EditIcon fontSize="small" />}
-              >
-                {" "}
-                Edit Info{" "}
-              </Button> */}
               <CustomButton
                 labelText="Edit Info"
                 textColor="#248dc1"
@@ -316,36 +298,28 @@ function ViewChildren() {
       >
         <PageHeader headerName="View All Children" />
         <Stack direction={"row"} gap={4} mr={2}>
-          <Button
-            className="header-btn"
-            variant="text"
-            startIcon={<AddCircleOutlineOutlinedIcon />}
-            sx={{
-              width: "135px",
-              margin: "12px 0",
-              borderRadius: "20px",
-              "&:hover": {
-                border: "1px solid #fff",
-              },
-            }}
-          >
-            Add a Child
-          </Button>
-          <Button
-            className="header-btn"
-            variant="text"
-            startIcon={<ArrowLeftOutlinedIcon sx={{ marginLeft: "0" }} />}
-            sx={{
-              margin: "12px 0",
-              color: "#fff",
-              borderRadius: "20px",
-              "&:hover": {
-                border: "1px solid #fff",
-              },
-            }}
-          >
-            Back
-          </Button>
+          <CustomButton
+            labelText="Add a Child"
+            iconName="AddCircleOutlineOutlinedIcon"
+            textColor="#fff"
+            borderColor="transparent"
+            width="135px"
+            margin="12px 0"
+            padding="0"
+            hoverBorderColor="#fff"
+            border="1px solid"
+          />
+          <CustomButton
+            labelText="Back"
+            iconName="ArrowLeftOutlinedIcon"
+            textColor="#fff"
+            borderColor="transparent"
+            width="90px"
+            margin="12px 0"
+            padding="0"
+            hoverBorderColor="#fff"
+            border="1px solid"
+          />
         </Stack>
       </Stack>
       <Box mx={5} mb={5}>
