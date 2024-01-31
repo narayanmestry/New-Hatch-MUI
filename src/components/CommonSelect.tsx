@@ -71,6 +71,5 @@ CommonSelect.prototype = {
     labelName: PropTypes.string,
     list: PropTypes.array,
     bg_color: PropTypes.string
-
 }
 export default CommonSelect
