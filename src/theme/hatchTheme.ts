@@ -5,7 +5,7 @@ export const hatchTheme = createTheme({
       styleOverrides: {
         root: {
           "&.Mui-checked": {
-            color: "#00AF51",
+            color: "#00af51",
           },
           "& .MuiSvgIcon-root": { fontSize: 29 },
         },

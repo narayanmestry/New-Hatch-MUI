@@ -180,7 +180,11 @@ const Navbar = () => {
                                 console.log( "Condition ---- ", expanded === `expanded${index}` );
 
                                 return (
-                                    <Accordion expanded={expanded === `panel${index}`} onChange={handleChange( `panel${index}` )}>
+                                    <Accordion expanded={expanded === `panel${index}`} onChange={handleChange( `panel${index}` )} sx={{
+                                        '& .MuiPaper-root.MuiAccordion-root.Mui-expanded ': {
+                                            margin:'0px'
+                                        }
+                                    }} >
                                         <AccordionSummary
                                             expandIcon={expanded === `panel${index}` ? <RemoveIcon /> : <AddIcon />}
                                             aria-controls="panel1-content"

@@ -8,7 +8,6 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
-import EditIcon from "@mui/icons-material/Edit";
 
 import PageHeader from "../../components/PageHeader";
 import CommonSelect from "../../components/CommonSelect";
@@ -16,10 +15,13 @@ import InputWithSearch from "../../components/InputWithSearch";
 import { SchoolList } from "../../dummyData/SchoolList";
 import { ClassList } from "../../dummyData/ClassList";
 import { StatusList } from "../../dummyData/StatusList";
-import Footer from "../../components/Layout/Footer";
 import crossImg from "../../assets/images/insight/red-close.png";
+import CustomButton from "../../components/CustomButton";
 
 function ViewChildren() {
+  function handleClick() {
+    alert( "Added " )
+  }
   // coloums
   const cols: GridColDef[] = [
     {
@@ -121,7 +123,7 @@ function ViewChildren() {
         return (
           <>
             <Box>
-              <Button
+              {/* <Button
                 size="small"
                 variant="text"
                 sx={{
@@ -137,7 +139,18 @@ function ViewChildren() {
               >
                 {" "}
                 Edit Info{" "}
-              </Button>
+              </Button> */}
+              <CustomButton
+                labelText="Edit Info"
+                textColor="#248dc1"
+                bgColor="transparent"
+                hoverBGColor="#248dc1"
+                hoverTextColor="#fff"
+                borderColor="transparent"
+                iconName="EditIcon"
+                padding="5px 20px"
+                onClickFuction={handleClick}
+              />
             </Box>
           </>
         );
@@ -335,30 +348,22 @@ function ViewChildren() {
           </Button>
         </Stack>
       </Stack>
-      <Box mx={5}>
+      <Box mx={5} mb={5}>
         <Grid container my={5}>
           <Grid item xs={12} md={9}>
-            <Typography fontFamily={"Chivo"} pr={{xs:0,md:5}}>
+            <Typography fontFamily={"Chivo"} pr={{ xs: 0, md: 5 }}>
               Find and edit children. To move children between classes, select the
               new class from the dropdown in the child’s row
             </Typography>
           </Grid>
-          <Grid item xs={12} md={3} mt={{xs:3,md:0}} textAlign={{xs:'start',md:'end'}}>
-            <Button
-              variant="contained"
-              sx={{
-                background: "#00af51",
-                textTransform: "none",
-                fontFamily: "chivo",
-                borderRadius: "37px",
-                padding: "6px 32px",
-                "&:hover": {
-                  background: "#009143",
-                },
-              }}
-            >
-              Import to Add Children
-            </Button>
+          <Grid item xs={12} md={3} mt={{ xs: 3, md: 0 }} textAlign={{ xs: 'start', md: 'end' }}>
+            <CustomButton
+              labelText="Import to Add Children"
+              textColor="#fff"
+              bgColor="#00af51"
+              hoverBGColor="#009143"
+              onClickFuction={handleClick}
+            />
           </Grid>
         </Grid>
 
@@ -414,39 +419,22 @@ function ViewChildren() {
             </Grid>
           </Grid>
           <Stack direction={"row"} gap={2} mt={4} mb={6}>
-            <Button
-              variant="contained"
-              sx={{
-                background: "#00af51",
-                textTransform: "none",
-                fontFamily: "chivo",
-                borderRadius: "37px",
-                padding: "6px 32px",
-                "&:hover": {
-                  background: "#009143",
-                },
-              }}
-            >
-              Bulk Edit
-            </Button>
-            <Button
-              variant="contained"
-              sx={{
-                background: "transparent",
-                textTransform: "none",
-                fontFamily: "chivo",
-                borderRadius: "37px",
-                padding: "6px 32px",
-                border: "2px solid #ef3a3a",
-                color: "#ef3a3a",
-                "&:hover": {
-                  background: "#ef3a3a",
-                  color: "#fff",
-                },
-              }}
-            >
-              Delete/Deactivate
-            </Button>
+            <CustomButton
+              labelText="Bulk Edit"
+              textColor="#fff"
+              bgColor="#00af51"
+              hoverBGColor="#009143"
+              onClickFuction={handleClick}
+            />
+            <CustomButton
+              labelText="Delete/Deactivate"
+              textColor="#ef3a3a"
+              borderColor="#ef3a3a"
+              bgColor="transparent"
+              hoverBGColor="#ef3a3a"
+              hoverTextColor="#fff"
+              onClickFuction={handleClick}
+            />
           </Stack>
         </Box>
         <Box component="div">
@@ -454,8 +442,6 @@ function ViewChildren() {
           <Box sx={{ height: 500, width: "100%" }}>
             <DataGrid
               rows={rows}
-              // getRowHeight={() => 'auto'}
-              // rowHeight={80}
               sx={{
                 "& .MuiBox-root": {
                   width: "100%",
@@ -503,7 +489,6 @@ function ViewChildren() {
         </Box>
       </Box>
 
-      <Footer />
     </Box>
   );
 }

@@ -44,9 +44,6 @@
 }
 
 /* DataGrid  */
-.MuiButtonBase-root.MuiCheckbox-root.Mui-checked {
-  color: #00af51 !important;
-}
 
 .MuiDataGrid-cell {
   padding: 0;
