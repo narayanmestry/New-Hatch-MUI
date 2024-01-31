@@ -22,6 +22,7 @@ export const hatchTheme = createTheme({
         },
       },
     },
+ 
   },
   palette: {
     primary: {
