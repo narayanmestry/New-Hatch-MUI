@@ -101,8 +101,8 @@ const Navbar = () => {
                                                                         <>
                                                                             {
                                                                                 isSingleCol() ?
-                                                                                    <Grid item xs={12} key={index} p={1}>
-                                                                                        <Box p={2} sx={{ backgroundColor: '#e8fafe', borderRadius: '7px', height: '100%' }}>
+                                                                                    <Grid item xs={12} key={index} p={1} bgcolor={'#e8fafe'} borderRadius={'7px'} m={1}>
+                                                                                        <Box p={2} sx={{ borderRadius: '7px'}}>
 
                                                                                             <Stack direction={'row'} gap={1}>
                                                                                                 <MaterialIcon iconName={submemu.icon} /> <Typography variant='h1' fontSize={20} fontWeight={600}> {submemu.title}</Typography></Stack>
@@ -122,8 +122,8 @@ const Navbar = () => {
                                                                                         </Box>
                                                                                     </Grid>
                                                                                     :
-                                                                                    <Grid item xs={6} key={index} p={1}>
-                                                                                        <Box p={2} sx={{ backgroundColor: '#e8fafe', borderRadius: '7px', height: '100%' }}>
+                                                                                    <Grid item xs={5.7} key={index} p={1} bgcolor={'#e8fafe'} borderRadius={'7px'} m={1}>
+                                                                                        <Box p={2}>
                                                                                             <Stack direction={'row'} gap={1}><MaterialIcon iconName={submemu.icon} /> <Typography variant='h1' fontSize={20} fontWeight={600}>{submemu.title}</Typography></Stack>
                                                                                             <Stack direction={'column'} gap={1} mt={1}>
                                                                                                 {
