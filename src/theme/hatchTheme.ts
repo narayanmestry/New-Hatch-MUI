@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-export const hatchTheme = createTheme({
+export const hatchTheme = createTheme( {
   components: {
     MuiCheckbox: {
       styleOverrides: {
@@ -17,12 +17,28 @@ export const hatchTheme = createTheme({
           fontFamily: "Chivo",
           color: "#111",
           marginBottom: "5px",
-          fontSize:'18px',
-          paddingLeft:'5px'
+          fontSize: '18px',
+          paddingLeft: '5px'
         },
       },
     },
- 
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          '&.MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#c7c7c8',
+            },
+            '&:hover fieldset': {
+              borderColor: '#c7c7c8',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#c7c7c8',
+            },
+          }
+        }
+      }
+    },
   },
   palette: {
     primary: {
@@ -48,12 +64,15 @@ export const hatchTheme = createTheme({
       A200: "#eaeaea",
     },
   },
-  typography:{
-    fontFamily:'chivo',
-    fontWeightBold:700,
-    fontWeightMedium:600,
-    fontWeightRegular:500,
-    fontWeightLight:400
+  typography: {
+    fontFamily: 'chivo',
+    fontWeightBold: 700,
+    fontWeightMedium: 600,
+    fontWeightRegular: 500,
+    fontWeightLight: 400,
+    h1:{
+      
+    }
   }
- 
-});
+
+} );

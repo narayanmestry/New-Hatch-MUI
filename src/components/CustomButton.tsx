@@ -20,6 +20,8 @@ function CustomButton( props: attributesList ) {
     console.log( typeof ( props.iconName ), "<<<<" );
     return (
         <Button
+            disableRipple
+            className="custom-buttom"
             onClick={props.onClickFuction}
             sx={{
                 background: props.bgColor,

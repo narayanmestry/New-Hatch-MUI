@@ -391,7 +391,7 @@ const OrgAdminNavbarData = [
                         'id': 2,
                         'title': 'Add New Class',
                         'icon': '',
-                        'link': ''
+                        'link': 'add-class'
                     }
                 ]
             },
