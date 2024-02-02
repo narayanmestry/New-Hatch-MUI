@@ -14,8 +14,6 @@ const ViewSchool = () => {
             <Grid item xs={2}><CommonSelect  bg_color="#eeeeee" list={StatusList} labelName="Status :" /></Grid>
             <Grid item xs={2}><InputWithSearch placeholder="Search by Name"/></Grid>
           </Grid>
-          
-          
         </Grid>
         <Grid item xs={12} pb={2}> <ViewSchoolTable/></Grid>
     </Grid>

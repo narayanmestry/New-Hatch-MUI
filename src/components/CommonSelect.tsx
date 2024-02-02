@@ -22,6 +22,7 @@ function CommonSelect( props: OptionList ) {
                 <Typography
                     sx={{
                         color: '#000',
+
                         fontWeight: 400,
                         fontFamily: 'chivo',
 
@@ -42,20 +43,10 @@ function CommonSelect( props: OptionList ) {
                 displayEmpty
                 inputProps={{ 'aria-label': 'Without label' }}
                 defaultValue='none'
+                variant="outlined"
                 sx={{
                     bgcolor: props.bg_color,
-                    '& .MuiOutlinedInput-notchedOutline': {
-                        borderColor: '#c7c7c8', // Set your desired border color here
-
-                    },
-                    '&:hover .MuiOutlinedInput-notchedOutline': {
-                        borderColor: '#c7c7c8', // Set your desired border color on hover
-                    },
-                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                        borderColor: '#c7c7c8',
-                    },
                 }}
-                variant="outlined"
             >
                 <MenuItem value="none">
                     <em>Select</em>
@@ -66,10 +57,5 @@ function CommonSelect( props: OptionList ) {
             </Select>
         </FormControl >
     )
-}
-CommonSelect.prototype = {
-    labelName: PropTypes.string,
-    list: PropTypes.array,
-    bg_color: PropTypes.string
 }
 export default CommonSelect

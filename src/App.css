@@ -37,11 +37,14 @@
   color: #fff;
   text-transform: none;
 }
-
 .header-btn .MuiTouchRipple-root {
   background-color: transparent;
   color: #fff;
 }
+.custom-buttom .MuiBox-root{
+  margin-top:8px;
+}
+
 
 /* DataGrid  */
 .MuiDataGrid-root{
@@ -50,15 +53,13 @@
 .MuiDataGrid-cell {
   padding: 0;
 }
+/* This is use for remove the outline colour after click on cell */
 .MuiDataGrid-cell:focus,
 .MuiDataGrid-columnHeader:focus,
 .MuiDataGrid-columnHeader:focus-within,
 .MuiDataGrid-cell:focus-within {
   outline: none !important;
-  /* This is use for remove the outline colour after click on cell */
 }
-
-
 
 /* Common Dropdown overrided Stylesheet */
 .MuiList-root {
@@ -66,15 +67,12 @@
   background-color: #ffffff;
   max-height: 350px;
 }
-
 .MuiList-root .MuiButtonBase-root .Mui-selected {
   background-color: #ffffff;
 }
-
 .MuiList-root li {
   font-family: 'chivo';
 }
-
 .MuiList-root li:hover {
   background-color: #c7c7c8;
 }
@@ -97,7 +95,10 @@
 .react-multiple-carousel__arrow--right::before {
   color: #000 !important;
 }
-/* custom table select with datagrid */
+/* Add class */
+.add-class-img-container .img-box.selected{
+  background-color: #248dc1;
+}/* custom table select with datagrid */
 .tableimage{
   background-image: url('./assets/images/insight/recbarpattern-taller-new.png') !important;
 }
