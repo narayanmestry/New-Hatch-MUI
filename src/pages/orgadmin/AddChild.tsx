@@ -220,7 +220,6 @@ function AddChild() {
             </Grid>
           </Grid>
         </Box>
-        <Footer />
       </Box>
     </>
   );
