@@ -6,20 +6,21 @@ import Box from "@mui/material/Box";
 
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
-import EditIcon from "@mui/icons-material/Edit";
 
-import PageHeader from "../../components/PageHeader";
-import CommonSelect from "../../components/CommonSelect";
-import InputWithSearch from "../../components/InputWithSearch";
-import { SchoolList } from "../../dummyData/SchoolList";
-import { ClassList } from "../../dummyData/ClassList";
-import { StatusList } from "../../dummyData/StatusList";
-import Footer from "../../components/Layout/Footer";
-import crossImg from "../../assets/images/insight/red-close.png";
+import PageHeader from "../../../components/PageHeader";
+import CommonSelect from "../../../components/CommonSelect";
+import InputWithSearch from "../../../components/InputWithSearch";
+import { SchoolList } from "../../../dummyData/SchoolList";
+import { ClassList } from "../../../dummyData/ClassList";
+import { StatusList } from "../../../dummyData/StatusList";
+import crossImg from "../../../assets/images/insight/red-close.png";
+import CustomButton from "../../../components/CustomButton";
+
 
 function ViewChildren() {
+  function handleClick() {
+    alert( "Added " )
+  }
   // coloums
   const cols: GridColDef[] = [
     {
@@ -121,23 +122,17 @@ function ViewChildren() {
         return (
           <>
             <Box>
-              <Button
-                size="small"
-                variant="text"
-                sx={{
-                  textTransform: "none",
-                  padding: "8px 22px",
-                  borderRadius: "20px",
-                  "&:hover": {
-                    background: "#248dc1",
-                    color: "#fff",
-                  },
-                }}
-                startIcon={<EditIcon fontSize="small" />}
-              >
-                {" "}
-                Edit Info{" "}
-              </Button>
+              <CustomButton
+                labelText="Edit Info"
+                textColor="#248dc1"
+                bgColor="transparent"
+                hoverBGColor="#248dc1"
+                hoverTextColor="#fff"
+                borderColor="transparent"
+                iconName="EditIcon"
+                padding="5px 20px"
+                onClickFuction={handleClick}
+              />
             </Box>
           </>
         );
@@ -303,69 +298,52 @@ function ViewChildren() {
       >
         <PageHeader headerName="View All Children" />
         <Stack direction={"row"} gap={4} mr={2}>
-          <Button
-            className="header-btn"
-            variant="text"
-            startIcon={<AddCircleOutlineOutlinedIcon />}
-            sx={{
-              width: "135px",
-              margin: "12px 0",
-              borderRadius: "20px",
-              "&:hover": {
-                border: "1px solid #fff",
-              },
-            }}
-          >
-            Add a Child
-          </Button>
-          <Button
-            className="header-btn"
-            variant="text"
-            startIcon={<ArrowLeftOutlinedIcon sx={{ marginLeft: "0" }} />}
-            sx={{
-              margin: "12px 0",
-              color: "#fff",
-              borderRadius: "20px",
-              "&:hover": {
-                border: "1px solid #fff",
-              },
-            }}
-          >
-            Back
-          </Button>
+          <CustomButton
+            labelText="Add a Child"
+            iconName="AddCircleOutlineOutlinedIcon"
+            textColor="#fff"
+            borderColor="transparent"
+            width="135px"
+            margin="12px 0"
+            padding="0"
+            hoverBorderColor="#fff"
+            border="1px solid"
+          />
+          <CustomButton
+            labelText="Back"
+            iconName="ArrowLeftOutlinedIcon"
+            textColor="#fff"
+            borderColor="transparent"
+            width="90px"
+            margin="12px 0"
+            padding="0"
+            hoverBorderColor="#fff"
+            border="1px solid"
+          />
         </Stack>
       </Stack>
-      <Box mx={5}>
-        <Stack
-          direction={"row"}
-          justifyContent={"space-between"}
-          alignContent={"center"}
-          my={5}
-        >
-          <Typography fontFamily={"Chivo"}>
-            Find and edit children. To move children between classes, select the
-            new class from the dropdown in the child’s row
-          </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              background: "#00af51",
-              textTransform: "none",
-              fontFamily: "chivo",
-              borderRadius: "37px",
-              padding: "6px 32px",
-              "&:hover": {
-                background: "#009143",
-              },
-            }}
-          >
-            Import to Add Children
-          </Button>
-        </Stack>
+      <Box mx={5} mb={5}>
+        <Grid container my={5}>
+          <Grid item xs={12} md={9}>
+            <Typography fontFamily={"Chivo"} pr={{ xs: 0, md: 5 }}>
+              Find and edit children. To move children between classes, select the
+              new class from the dropdown in the child’s row
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={3} mt={{ xs: 3, md: 0 }} textAlign={{ xs: 'start', md: 'end' }}>
+            <CustomButton
+              labelText="Import to Add Children"
+              textColor="#fff"
+              bgColor="#00af51"
+              hoverBGColor="#009143"
+              onClickFuction={handleClick}
+            />
+          </Grid>
+        </Grid>
 
         <Box>
-          <Grid container>
-            <Grid item xs={10}>
+          <Grid container className="filter-section">
+            <Grid item xs={12} lg={10}>
               <Stack direction={{ lg: "row", xs: "column" }} gap={2}>
                 <Stack direction={"row"} gap={2} width={"100%"}>
                   <CommonSelect
@@ -403,46 +381,34 @@ function ViewChildren() {
                 </Stack>
               </Stack>
             </Grid>
-            <Grid item xs={2}>
-              <Box sx={{ mt: 3, ml: 3 }} width={"90%"}>
+            <Grid item xs={12} lg={2} display={'flex'} alignItems={'end'}>
+              <Box
+                sx={{
+                  mt: { xs: 3, lg: 0 },
+                  ml: { xs: 0, lg: 3 },
+                  width: { xs: '32.2%', lg: '90%' },
+                }}>
                 <InputWithSearch placeholder="Search by Name" />
               </Box>
             </Grid>
           </Grid>
           <Stack direction={"row"} gap={2} mt={4} mb={6}>
-            <Button
-              variant="contained"
-              sx={{
-                background: "#00af51",
-                textTransform: "none",
-                fontFamily: "chivo",
-                borderRadius: "37px",
-                padding: "6px 32px",
-                "&:hover": {
-                  background: "#009143",
-                },
-              }}
-            >
-              Bulk Edit
-            </Button>
-            <Button
-              variant="contained"
-              sx={{
-                background: "transparent",
-                textTransform: "none",
-                fontFamily: "chivo",
-                borderRadius: "37px",
-                padding: "6px 32px",
-                border: "2px solid #ef3a3a",
-                color: "#ef3a3a",
-                "&:hover": {
-                  background: "#ef3a3a",
-                  color: "#fff",
-                },
-              }}
-            >
-              Delete/Deactivate
-            </Button>
+            <CustomButton
+              labelText="Bulk Edit"
+              textColor="#fff"
+              bgColor="#00af51"
+              hoverBGColor="#009143"
+              onClickFuction={handleClick}
+            />
+            <CustomButton
+              labelText="Delete/Deactivate"
+              textColor="#ef3a3a"
+              borderColor="#ef3a3a"
+              bgColor="transparent"
+              hoverBGColor="#ef3a3a"
+              hoverTextColor="#fff"
+              onClickFuction={handleClick}
+            />
           </Stack>
         </Box>
         <Box component="div">
@@ -450,8 +416,6 @@ function ViewChildren() {
           <Box sx={{ height: 500, width: "100%" }}>
             <DataGrid
               rows={rows}
-              // getRowHeight={() => 'auto'}
-              // rowHeight={80}
               sx={{
                 "& .MuiBox-root": {
                   width: "100%",
@@ -499,7 +463,6 @@ function ViewChildren() {
         </Box>
       </Box>
 
-      <Footer />
     </Box>
   );
 }

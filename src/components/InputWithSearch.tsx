@@ -10,7 +10,7 @@ type InputParameterList = {
 
 function InputWithSearch(props:InputParameterList) {
     return (
-        <FormControl sx={{mr: 2, mb:2, width: '100%' }} variant="outlined">
+        <FormControl sx={{width: '100%' }} variant="outlined">
             <OutlinedInput
                 size='small'
                 id="outlined-adornment-weight"

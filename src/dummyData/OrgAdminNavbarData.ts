@@ -347,7 +347,7 @@ const OrgAdminNavbarData = [
                         'id': 1,
                         'title': 'View & Edit Schools',
                         'icon': '',
-                        'link': ''
+                        'link': 'view-school'
                     },
                     {
                         'id': 2,
