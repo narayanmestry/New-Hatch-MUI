@@ -1,4 +1,3 @@
-import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -92,7 +91,7 @@ function ViewChildren() {
           <>
             <Box>
               {/* <Avatar alt="Remy Sharp" src={crossImg} sx={{ width: '100px' }} /> */}
-              <img src={crossImg} alt="" width={"40px"} />
+              <img src={crossImg} alt="" width={"25px"} />
             </Box>
           </>
         );
