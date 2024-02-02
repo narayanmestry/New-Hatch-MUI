@@ -97,3 +97,51 @@
 .react-multiple-carousel__arrow--right::before {
   color: #000 !important;
 }
+/* custom table select with datagrid */
+.tableimage{
+  background-image: url('./assets/images/insight/recbarpattern-taller-new.png') !important;
+}
+.css-1kqls9p-MuiDataGrid-root .MuiDataGrid-withBorderColor, .css-1iyq7zh-MuiDataGrid-columnHeaders, .css-1kqls9p-MuiDataGrid-root, .css-wop1k0-MuiDataGrid-footerContainer{
+  border: none !important;
+}
+.css-t89xny-MuiDataGrid-columnHeaderTitle{
+  font-weight: bolder !important;
+  color:#248dc5
+}
+.customtableheader{
+  display: flex;
+}
+.customTypography {
+  padding-left: 7px;
+  padding-right: 10px;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  color: rgb(111, 110, 110);
+  letter-spacing: 1px !important;
+}
+/* datagrid pagination */
+.css-levciy-MuiTablePagination-displayedRows{
+  margin-top: auto;
+}
+/* custom date range calendar css */
+.css-bkzwk2-MuiStack-root{
+  padding: 0 !important;
+}
+.css-1v8yqdb-MuiPickersArrowSwitcher-root{
+  padding: 0 !important;
+}
+/* react- date- range */
+.rdrDefinedRangesWrapper{
+  display: none;
+}
+.rdrMonthAndYearWrapper{
+  height: 40px;
+  padding: 0 !important; 
+}
+.rdrMonth{
+  padding: 0 !important;
+  width: 23em !important;
+}
+.rdrDay{
+  height: 3em !important;
+}

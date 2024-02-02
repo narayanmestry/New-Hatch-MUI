@@ -4,21 +4,20 @@ import SliderData from "../dummyData/SliderData";
 import { Box, Typography } from '@mui/material';
 
 const CustomSlider = () => {
-    console.log(SliderData,"SliderData");
     
     const responsive = {
         desktop: {
-          breakpoint: { max: 3000, min: 1024 },
+          breakpoint: { max: 3000, min: 1501 },
           items: 4.9,
           slidesToSlide: 4.9, 
         },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 4,
-          slidesToSlide: 4 
+        laptop: {
+          breakpoint: { max: 1500, min: 900 },
+          items: 3.4,
+          slidesToSlide: 3.4
         },
         mobile: {
-          breakpoint: { max: 464, min: 0 },
+          breakpoint: { max: 899, min: 0 },
           items: 2,
           slidesToSlide: 2 
         }
@@ -40,9 +39,9 @@ const CustomSlider = () => {
         >
             {SliderData && SliderData.map((data , index) => {
                 return (
-                    <Box key={index} sx={{ color: `${data.color}`, p: 1,borderRadius: 3,display:'flex', alignItems:'center',backgroundColor:`${data.bgcolor}`, width:'330px'}} >
-                        <img src={data.imagePath} alt="" />
-                        <Typography sx={{fontSize:'17px', fontWeight:700}} paddingLeft={1}>{data.title}</Typography>
+                    <Box  key={index} sx={{ color: `${data.color}`, p: 1,borderRadius: 3,display:'flex', alignItems:'center',backgroundColor:`${data.bgcolor}`, mr:1.5, cursor:'pointer',}} >
+                        <img  src={data.imagePath} alt="" />
+                        <Typography sx={{fontSize:'17px', fontWeight:700, wordBreak:"break-word"}} paddingLeft={1}>{data.title}</Typography>
                     </Box>
                 )
             })}
