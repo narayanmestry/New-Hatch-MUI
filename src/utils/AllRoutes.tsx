@@ -13,11 +13,11 @@ function AllRoutes() {
             <Route path="/" element={<LoginRegistrationPage />} />
             <Route path="org" element={<RootLayout />}>
                 {/* Org Admin Routes */}
+                <Route index element={<OrganizationAdminDashboard/>}/>   
                 <Route path="view-children" element={<ViewChildren />} />
                 <Route path="view-school" element={<ViewSchool />} />
                 <Route path="add-child" element={<AddChild />} />
                 <Route path="ignite-child-play-time" element={<IgniteChildPLayTime />} />
-                <Route path="org-admin" element={<OrganizationAdminDashboard/>}/>   
             </Route>
         </Routes>
     )

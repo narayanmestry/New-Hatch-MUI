@@ -1,9 +1,21 @@
 import { Box } from '@mui/material';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import React from 'react'
+import { DataGrid, GridColDef , GridToolbarContainer,
+  GridToolbarFilterButton,
+  GridToolbarExport, } from '@mui/x-data-grid';
 import CustomButton from '../CustomButton';
 
 const ViewSchoolTable = () => {
+  function CustomToolbar() {
+    return (
+      <GridToolbarContainer>
+        {/* <GridToolbarColumnsButton /> */}
+        <GridToolbarFilterButton />
+        {/* <GridToolbarDensitySelector /> */}
+        <GridToolbarExport />
+      </GridToolbarContainer>
+    );
+  }
     const cols: GridColDef[] = [
         {
           field: "name",
@@ -155,6 +167,11 @@ const ViewSchoolTable = () => {
     }}
     pageSizeOptions={[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]}
     disableRowSelectionOnClick
+    disableColumnMenu
+    hideFooterSelectedRowCount
+    slots={{
+      toolbar: CustomToolbar,
+    }}
   ></DataGrid>
   )
 }

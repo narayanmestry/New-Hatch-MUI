@@ -1,21 +1,11 @@
 import React from 'react';
-import { Box, Button, Card, Divider, Grid, Menu, MenuItem, Typography } from '@mui/material'
-import Footer from '../../components/Layout/Footer'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import {SchoolList }from '../../dummyData/SchoolList';
-import roundedCheckLogo from '../../assets/check-icon-rounded.png'
+import { Box, Button, Card, Divider, Grid, Typography } from '@mui/material'
+import { SchoolList } from '../../dummyData/SchoolList';
+import  checkRoundedImg  from '../../assets/check-icon-rounded.png';
+import CommonSelect from '../../components/CommonSelect';
+import MaterialIcon from '../../components/MaterialIcon';
 const OrganizationAdminDashboard = () => {
 
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
-  
   return (
     <Grid container >
         <Grid item xs={12}>    
@@ -23,35 +13,7 @@ const OrganizationAdminDashboard = () => {
               <Grid item xs={5} display={'flex'} justifyContent={'center'} alignItems={'center'}><Typography color={'#fff'} sx={{fontSize:'32px' , m:'8px 0px 6px' , fontWeight:900}} fontFamily={'Nunito'}>Welcome, ag!</Typography></Grid>
               <Grid item xs={5} display={'flex'} alignItems={'center'} >
                 <Typography sx={{color:"#fff"}}>School &nbsp;</Typography>
-              <Button
-                 id="basic-button"
-                 aria-controls={open ? 'basic-menu' : undefined}
-                 aria-haspopup="true"
-                 aria-expanded={open ? 'true' : undefined}
-                 onClick={handleClick} 
-                 endIcon={open ?  <ExpandLessIcon/> :<ExpandMoreIcon/> }     
-                 sx={{background:'#eaeaea', color:'#555555' , width:'90%' ,display:'flex' , fontSize:'16px' , fontFamily:'Chivo', '&:hover': {
-                    backgroundColor: '#eaeaea', 
-                  }}} 
-              >
-               All Schools  <div style={{width:'60%'}}></div>
-
-              </Button>
-                 <Menu
-                   id="basic-menu"
-                   anchorEl={anchorEl}
-                   open={open}
-                   onClose={handleClose}
-                   MenuListProps={{
-                     'aria-labelledby': 'basic-button',
-                   }}
-                 >
-                    {SchoolList.map((data ,index)=>{
-                        return (
-                            <MenuItem key={index} sx={{pr:60}} onClick={handleClose}>{data}</MenuItem>
-                        )
-                    })}
-                 </Menu>
+                 <CommonSelect bg_color='#EAEAEA' labelName='' list={SchoolList}/>
               </Grid>
               <Grid item xs={2}>logout</Grid>
             </Grid>
@@ -59,10 +21,10 @@ const OrganizationAdminDashboard = () => {
         <Grid item xs={12} sx={{bgcolor: '#248dc1',p:'30px 0px'}}>
             <Grid container width={{sm:'100%',lg:'80%'}} margin={'auto'} spacing={4}> 
                 <Grid item md={6} xs={12} lg={4}>
-                    <Card sx={{p:2 , minHeight:'300px'}}>
+                    <Card sx={{p:2 , minHeight:'300px', ':hover':{ boxShadow: "4px 5px #1d7aa7" , transform: 'scale(1.02)'}}}>
                         <Grid container>
                             <Grid item xs={12}> 
-                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1', fontSize:'22px',display:'flex' , justifyContent:'center',alignItems:'center'}}> Ignite by Hatch <sup style={{fontSize:'10px'}}>TM</sup> &nbsp; Utilization
+                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1',display:'flex' , justifyContent:'center',alignItems:'center'}} fontSize={{xl:'22px', md:'20px'}}> Ignite by Hatch <sup style={{fontSize:'13px'}}>TM</sup>  Utilization
                               </Typography>
                             </Grid>
                             <Grid item xs={12}>
@@ -86,10 +48,10 @@ const OrganizationAdminDashboard = () => {
                     </Card>
                 </Grid>
                 <Grid item md={6} xs={12} lg={4}>
-                    <Card sx={{p:2, minHeight:'300px'}}>
+                    <Card sx={{p:2, minHeight:'300px' ,  ':hover':{ boxShadow: "4px 5px #1d7aa7" , transform: 'scale(1.02)'}}}>
                     <Grid container>
                             <Grid item xs={12}> 
-                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1', fontSize:'22px'}}> Average Demonstrated Skill Progress
+                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1',display:'flex' , justifyContent:'center',alignItems:'center'}} fontSize={{xl:'22px', md:'20px'}}> Average Demonstrated Skill Progress
                               </Typography>
                             </Grid>
                             <Grid item xs={12}>
@@ -114,10 +76,10 @@ const OrganizationAdminDashboard = () => {
                     </Card>
                 </Grid>
                 <Grid item md={6} xs={12} lg={4}>
-                <Card sx={{p:2, minHeight:'300px'}}>
+                <Card sx={{p:2, minHeight:'300px', ':hover':{ boxShadow: "4px 5px #1d7aa7" , transform: 'scale(1.02)'}}}>
                         <Grid container >
                             <Grid item xs={12}> 
-                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1', fontSize:'22px'}}> Want to Learn More ?
+                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1',display:'flex' , justifyContent:'center',alignItems:'center'}} fontSize={{xl:'22px', md:'20px'}}> Want to Learn More ?
                               </Typography>
                             </Grid>
                             <Grid item xs={12}>
@@ -137,14 +99,14 @@ const OrganizationAdminDashboard = () => {
                     </Card> 
                 </Grid>
                 <Grid item md={6} xs={12} lg={4}> 
-                <Card sx={{p:2, minHeight:'300px'}}>
+                <Card sx={{p:2, minHeight:'300px', ':hover':{ boxShadow: "4px 5px #1d7aa7" , transform: 'scale(1.02)'}}}>
                         <Grid container>
                             <Grid item xs={12}> 
-                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1', fontSize:'22px' , display:'flex' , justifyContent:'center'}}> Support Needed
+                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1',display:'flex' , justifyContent:'center',alignItems:'center'}} fontSize={{xl:'22px', md:'20px'}}> Support Needed
                               </Typography>
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{fontFamily: '"Chivo", sans-serif' , display:'flex' , justifyContent:'center' }}><img src={roundedCheckLogo}alt='checkrounded'/></Typography>
+                                <Typography sx={{fontFamily: '"Chivo", sans-serif' , display:'flex' , justifyContent:'center' }}><img src={checkRoundedImg}alt='checkrounded'/></Typography>
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography sx={{fontFamily: '"Chivo", sans-serif', fontSize:'16px' ,color:'#00AF51' ,display:'flex' , justifyContent:'center',textAlign:'center'}}>Your support has paid off! All children are progressing.</Typography>
@@ -153,10 +115,10 @@ const OrganizationAdminDashboard = () => {
                  </Card>
                  </Grid>
                 <Grid item md={6} xs={12} lg={4}>
-                <Card sx={{p:2, minHeight:'300px'}}>
+                <Card sx={{p:2, minHeight:'300px', ':hover':{ boxShadow: "4px 5px #1d7aa7" , transform: 'scale(1.02)'}}}>
                         <Grid container>
                             <Grid item xs={12}> 
-                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1', fontSize:'22px',display:'flex' , justifyContent:'center',alignItems:'center'}}> Average Play Time
+                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1',display:'flex' , justifyContent:'center',alignItems:'center'}} fontSize={{xl:'22px', md:'20px'}}> Average Play Time
                               </Typography>
                             </Grid>
                             <Grid item xs={12}>
@@ -178,10 +140,10 @@ const OrganizationAdminDashboard = () => {
                 </Card>
                 </Grid>
                 <Grid item md={6} xs={12} lg={4}> 
-                <Card sx={{p:2, minHeight:'300px'}}>
+                <Card sx={{p:2, minHeight:'300px', ':hover':{ boxShadow: "4px 5px #1d7aa7" , transform: 'scale(1.02)'}}}>
                         <Grid container>
                             <Grid item xs={12}> 
-                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1', fontSize:'22px',display:'flex' , justifyContent:'center',alignItems:'center'}}> Teaching Strategies GOLD
+                              <Typography sx={{fontWeight:700 , fontFamily:"Nunito" , color:'#248dc1',display:'flex' , justifyContent:'center',alignItems:'center'}} fontSize={{xl:'22px', md:'20px'}}> Teaching Strategies GOLD
                               </Typography>
                             </Grid>
                             <Grid item xs={12} display={'flex'} justifyContent={'center'}>
@@ -203,10 +165,14 @@ const OrganizationAdminDashboard = () => {
                         </Grid>
                 </Card>
                     </Grid>
-                <Grid item xs={12}>Current ignite version </Grid>
+                <Grid item xs={12} >
+                    <Box sx={{borderRadius:20 , bgcolor:'#EBFBFF' , display:'flex' , justifyContent:'space-between' , p:2}} >
+                        <Typography sx={{fontFamily: '"Chivo", sans-serif', fontSize:'18px' ,color:'#248DC1' ,display:'flex' , justifyContent:'center'}}>current ignite version</Typography>
+                        <Typography sx={{fontFamily: '"Chivo", sans-serif', fontSize:'18px' ,color:'#248DC1' ,display:'flex' , justifyContent:'center'}} ><MaterialIcon iconName='PhoneLink'/>&nbsp; current ignite version</Typography>
+                    </Box>
+                </Grid>
             </Grid>
         </Grid>
-        <Grid item xs={12}> <Footer/> </Grid>
         
     </Grid>
   )
