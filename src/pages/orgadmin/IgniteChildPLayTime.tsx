@@ -130,7 +130,6 @@ function IgniteChildPLayTime() {
             </Box>
           </Grid>
         </Grid>
-        <Footer />
       </Box>
     </>
   )
