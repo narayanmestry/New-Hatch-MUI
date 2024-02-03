@@ -17,7 +17,6 @@ type attributesList = {
     onClickFuction?: ( event: React.MouseEvent<HTMLButtonElement> ) => void
 }
 function CustomButton( props: attributesList ) {
-    console.log( typeof ( props.iconName ), "<<<<" );
     return (
         <Button
             disableRipple

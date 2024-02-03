@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import FormControl from "@mui/material/FormControl"
 import MenuItem from "@mui/material/MenuItem"
 import Select from "@mui/material/Select"
@@ -7,14 +5,19 @@ import Typography from "@mui/material/Typography"
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import { ISelectItemList } from '../Interface/ISelectItemList'
 
 type OptionList = {
     labelName?: string,
     bg_color?: string,
-    list: string[]
+    arrayOfObject: ISelectItemList[]
 }
 function CommonSelect( props: OptionList ) {
-    const selectOptionList: string[] = props.list
+    const selectOptionList: ISelectItemList[] = props.arrayOfObject
+    selectOptionList.map( ( value: ISelectItemList, index: number ) => {
+        console.log( "@@", value.labelName );
+    } )
+
     return (
         <FormControl sx={{ width: '100%' }}>
             {
@@ -52,7 +55,11 @@ function CommonSelect( props: OptionList ) {
                     <em>Select</em>
                 </MenuItem>
                 {
-                    selectOptionList.map( ( value: string, index: number ) => ( <MenuItem value={value} key={index} > {value}</MenuItem> ) )
+                    // selectOptionList.map( ( value: string, index: number ) => ( <MenuItem value={value} key={index} > {value}</MenuItem> ) )
+                    selectOptionList.map( ( item: ISelectItemList, index: number ) => (
+                        <MenuItem key={index} value={item.value}>{item.labelName}</MenuItem>
+                    ) )
+
                 }
             </Select>
         </FormControl >

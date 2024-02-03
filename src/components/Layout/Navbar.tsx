@@ -94,7 +94,7 @@ const Navbar = () => {
                                                         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                                                         transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                                                     >
-                                                        <Grid container width={isSingleCol() ? 400 : 800} p={1} className=''>
+                                                        <Grid container width={isSingleCol() ? 400 : 900} p={1} className=''>
                                                             {
                                                                 menu.subMenu.map( ( submemu, index ) => {
                                                                     return (
@@ -106,7 +106,7 @@ const Navbar = () => {
 
                                                                                             <Stack direction={'row'} gap={1}>
                                                                                                 <MaterialIcon iconName={submemu.icon} /> <Typography variant='h1' fontSize={20} fontWeight={600}> {submemu.title}</Typography></Stack>
-                                                                                            <Stack direction={'column'} gap={1} mt={1}>
+                                                                                            <Stack direction={'column'} gap={2} mt={1}>
                                                                                                 {
                                                                                                     submemu.subMenu.map( ( nested_submenu, index ) => (
                                                                                                         <Box className="link">
@@ -125,7 +125,7 @@ const Navbar = () => {
                                                                                     <Grid item xs={5.7} key={index} p={1} bgcolor={'#e8fafe'} borderRadius={'7px'} m={1}>
                                                                                         <Box p={2}>
                                                                                             <Stack direction={'row'} gap={1}><MaterialIcon iconName={submemu.icon} /> <Typography variant='h1' fontSize={20} fontWeight={600}>{submemu.title}</Typography></Stack>
-                                                                                            <Stack direction={'column'} gap={1} mt={1}>
+                                                                                            <Stack direction={'column'} gap={2} mt={1}>
                                                                                                 {
                                                                                                     submemu.subMenu.map( ( nested_submenu, index ) => (
                                                                                                         <Box className="link" >
