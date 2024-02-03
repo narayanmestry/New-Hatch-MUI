@@ -9,14 +9,20 @@ import { Link } from "react-router-dom";
 import PageHeader from "../../../components/PageHeader";
 import CommonSelect from "../../../components/CommonSelect";
 import InputWithSearch from "../../../components/InputWithSearch";
-import { SchoolList } from "../../../dummyData/SchoolList";
-import { ClassList } from "../../../dummyData/ClassList";
-import { StatusList } from "../../../dummyData/StatusList";
+
+import SchoolList from "../../../dummyData/SchoolList";
+import TeacherList from "../../../dummyData/TeacherList";
+
+import ClassList from "../../../dummyData/ClassList";
 import crossImg from "../../../assets/images/insight/red-close.png";
 import CustomButton from "../../../components/CustomButton";
+import PhotoStatusList from "../../../dummyData/PhotoStatusList";
+import EducationalJournyList from "../../../dummyData/EducationalJournyList";
+import StatusList from "../../../dummyData/StatusList";
 
 
 function ViewChildren() {
+
   function handleClick() {
     alert( "Added " )
   }
@@ -36,7 +42,7 @@ function ViewChildren() {
         return (
           <>
             <Box>
-              <CommonSelect bg_color="#eeeeee" list={SchoolList} labelName="" />
+              <CommonSelect bg_color="#eeeeee" arrayOfObject={SchoolList} labelName="" />
             </Box>
           </>
         );
@@ -50,7 +56,7 @@ function ViewChildren() {
         return (
           <>
             <Box bgcolor={'#fff'}>
-              <CommonSelect bg_color="#eeeeee" list={ClassList} labelName="" />
+              <CommonSelect bg_color="#eeeeee" arrayOfObject={ClassList} labelName="" />
             </Box>
           </>
         );
@@ -347,34 +353,34 @@ function ViewChildren() {
                 <Stack direction={"row"} gap={2} width={"100%"}>
                   <CommonSelect
                     bg_color="#eeeeee"
-                    list={SchoolList}
+                    arrayOfObject={SchoolList}
                     labelName="School :"
                   />
                   <CommonSelect
                     bg_color="#eeeeee"
-                    list={ClassList}
+                    arrayOfObject={ClassList}
                     labelName="Class :"
                   />
                   <CommonSelect
                     bg_color="#eeeeee"
-                    list={SchoolList}
+                    arrayOfObject={TeacherList}
                     labelName="Teacher :"
                   />
                 </Stack>
                 <Stack direction={"row"} gap={2} width={"100%"}>
                   <CommonSelect
                     bg_color="#eeeeee"
-                    list={ClassList}
+                    arrayOfObject={PhotoStatusList}
                     labelName="Photo Status :"
                   />
                   <CommonSelect
                     bg_color="#eeeeee"
-                    list={StatusList}
+                    arrayOfObject={EducationalJournyList}
                     labelName="Educational Journey :"
                   />
                   <CommonSelect
                     bg_color="#eeeeee"
-                    list={StatusList}
+                    arrayOfObject={StatusList}
                     labelName="Status :"
                   />
                 </Stack>

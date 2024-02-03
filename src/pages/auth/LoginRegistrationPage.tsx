@@ -27,12 +27,12 @@ function LoginRegistrationPage() {
   const onLoginSubmit: SubmitHandler<LoginFormData> = ( data ) => {
     console.log( "Form Data ====>", data )
     if(userRole.includes('HATCH-ADMIN')){
-      navigate('hatch/dashboard')
+      navigate('hatch')
       console.log("Hatch Admin ");
       
     }
     if(userRole.includes('ORG-ADMIN')){
-      navigate('org/view-children')
+      navigate('org')
        console.log("Org Admin ");
 
      }
