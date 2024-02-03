@@ -8,15 +8,15 @@ import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import PublishIcon from '@mui/icons-material/Publish';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import CommonSelect from "../../components/CommonSelect";
-import { SchoolList } from "../../dummyData/SchoolList";
+import SchoolList from "../../dummyData/SchoolList";
 import { useState } from "react";
 
 function AddChild() {
 
-  const [selectedValue, setSelectedValue] = useState('english');
+  const [selectedValue, setSelectedValue] = useState( 'english' );
 
-  const handleChange = (event: any) => {
-    setSelectedValue(event.target.value);
+  const handleChange = ( event: any ) => {
+    setSelectedValue( event.target.value );
   };
   return (
     <>
@@ -63,13 +63,13 @@ function AddChild() {
                   <Grid container >
                     <Grid item xs={12} sm={12} md={6}>
                       <Box sx={{ fontFamily: "Chivo", color: "#111", pr: { sm: 0, md: 2 }, pb: 2 }}>
-                        <CommonSelect bg_color="transparent" labelName="School*" list={SchoolList} />
+                        <CommonSelect bg_color="transparent" labelName="School*" arrayOfObject={SchoolList} />
                       </Box>
                     </Grid>
 
                     <Grid item xs={12} sm={12} md={6}>
                       <Box sx={{ fontFamily: "Chivo", color: "#111", }}>
-                        <CommonSelect bg_color="transparent" labelName="Class*" list={SchoolList} />
+                        <CommonSelect bg_color="transparent" labelName="Class*" arrayOfObject={SchoolList} />
                       </Box>
                     </Grid>
 
