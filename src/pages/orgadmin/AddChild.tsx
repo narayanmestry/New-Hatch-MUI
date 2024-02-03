@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import userProfile from '../../assets/images/insight/user-default.png'
 import { Avatar, Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, InputLabel, Radio, RadioGroup, Stack, TextField, Typography } from "@mui/material";
 
-import Footer from "../../components/Layout/Footer";
 import PageHeader from "../../components/PageHeader";
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import PublishIcon from '@mui/icons-material/Publish';

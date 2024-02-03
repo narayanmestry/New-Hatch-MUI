@@ -7,7 +7,6 @@ import CustomSlider from '../../components/CustomSlider';
 import { DateRangeList } from '../../dummyData/DateRange';
 import CustomTable from '../../components/CustomTable';
 import { useState } from 'react';
-import Footer from '../../components/Layout/Footer';
 
 function IgniteChildPLayTime() {
   const [dateRange, setDaterange] = useState<any>( 'abc' )

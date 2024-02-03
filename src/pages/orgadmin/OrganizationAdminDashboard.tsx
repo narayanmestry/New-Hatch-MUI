@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Button, Card, Divider, Grid, Typography } from '@mui/material'
 import SchoolList from '../../dummyData/SchoolList';
 import checkRoundedImg from '../../assets/check-icon-rounded.png';
