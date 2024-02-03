@@ -4,14 +4,14 @@ import Stack from "@mui/material/Stack";
 import PageHeader from "../../../components/PageHeader"
 import CustomButton from "../../../components/CustomButton";
 import CommonSelect from "../../../components/CommonSelect";
-import { SchoolList } from "../../../dummyData/SchoolList";
+import SchoolList from "../../../dummyData/SchoolList";
 import { Avatar, Grid, Typography } from "@mui/material";
 import CustomTextInput from "../../../components/form/CustomTextInput";
 import AddClassImgsList from '../../../dummyData/AddClassImgsList'
 
 import AddClassArtBoardImg from '../../../assets/images/ignite/Artboard 29.png';
 import { useState } from "react";
-
+    
 function AddClass() {
     console.log( "Img list ", AddClassImgsList );
     const [selectedBox, setSelectedBox] = useState<number>()
@@ -78,10 +78,10 @@ function AddClass() {
                     <Grid item xs={7}>
                         <form action="">
                             <Stack direction={'column'} gap={2} width={'60%'} >
-                                <CommonSelect labelName="School" list={SchoolList} bg_color="#eeeeee" />
-                                <CustomTextInput labelName="Name this class. (example: “Morning Class”)" bg_color="#eeeeee" value={addClassFormValue.className} onHandleChange={handleChange} fieldName="className"/>
-                                <CommonSelect labelName="Assign a Teacher to this class." list={SchoolList} bg_color="#eeeeee" />
-                                <CommonSelect labelName="What curriculum does this class use?" list={SchoolList} bg_color="#eeeeee" />
+                                <CommonSelect labelName="School" arrayOfObject={SchoolList} bg_color="#eeeeee" />
+                                <CustomTextInput labelName="Name this class. (example: “Morning Class”)" bg_color="#eeeeee" value={addClassFormValue.className} onHandleChange={handleChange} fieldName="className" />
+                                <CommonSelect labelName="Assign a Teacher to this class." arrayOfObject={SchoolList} bg_color="#eeeeee" />
+                                <CommonSelect labelName="What curriculum does this class use?" arrayOfObject={SchoolList} bg_color="#eeeeee" />
                                 <Box>
                                     <Typography
                                         sx={{

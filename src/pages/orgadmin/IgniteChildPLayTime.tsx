@@ -1,20 +1,20 @@
 import { Box, Button, Grid, Typography } from '@mui/material'
 import PageHeader from "../../components/PageHeader";
 import FormCustomSelect from "../../components/FormCustomSelect";
-import { SchoolList } from "../../dummyData/SchoolList";
+import { SchoolList1 } from "../../dummyData/SchoolList1";
 import CustomSelectTable from "../../components/CustomSelectTable";
 import CustomSlider from '../../components/CustomSlider';
 import { DateRangeList } from '../../dummyData/DateRange';
 import CustomTable from '../../components/CustomTable';
-import {useState } from 'react';
+import { useState } from 'react';
 import Footer from '../../components/Layout/Footer';
 
 function IgniteChildPLayTime() {
-  const [dateRange, setDaterange] = useState<any>('abc')
+  const [dateRange, setDaterange] = useState<any>( 'abc' )
 
-  const dateRangeSelectFunction = (e: any) => {
-    console.log(e.target.value);
-    setDaterange(e.target.value);
+  const dateRangeSelectFunction = ( e: any ) => {
+    console.log( e.target.value );
+    setDaterange( e.target.value );
   }
 
   return (
@@ -49,28 +49,28 @@ function IgniteChildPLayTime() {
                 <Grid container spacing={2} >
                   <Grid item xs={12} sm={6} md={3} lg={3} xl={3}>
                     <Box>
-                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList}
+                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList1}
                         labelName="School" selectName="All Schools" />
                     </Box>
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={3} lg={3} xl={3} >
                     <Box>
-                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList}
+                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList1}
                         labelName="Classes" selectName="All Classes" />
                     </Box>
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={3} lg={3} xl={3} >
                     <Box>
-                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList}
+                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList1}
                         labelName="Teacher" selectName="All Teachers" />
                     </Box>
                   </Grid>
 
                   <Grid item xs={12} sm={6} md={3} lg={3} xl={3} >
                     <Box>
-                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList}
+                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList1}
                         labelName="Subdomain" selectName=" All Subdomains" />
                     </Box>
                   </Grid>
@@ -85,7 +85,7 @@ function IgniteChildPLayTime() {
 
                   <Grid item mt={2} xs={12} sm={12} md={3} >
                     <Box>
-                      <FormCustomSelect onChange={(e) => dateRangeSelectFunction(e)
+                      <FormCustomSelect onChange={( e ) => dateRangeSelectFunction( e )
                       } bg_color="#eeeeee" list={DateRangeList}
                         labelName="Date Range" selectName="This Week" />
                     </Box>
@@ -93,7 +93,7 @@ function IgniteChildPLayTime() {
 
                   <Grid item mt={2} xs={12} sm={12} md={3}>
                     <Box>
-                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList}
+                      <FormCustomSelect onChange={() => { }} bg_color="#eeeeee" list={SchoolList1}
                         labelName="Play Access Type" selectName="All" />
                     </Box>
                   </Grid>
@@ -101,11 +101,11 @@ function IgniteChildPLayTime() {
               </Grid>
             </Grid>
           </Grid>
-          
+
           {/* Reset Button and all added here */}
           <Grid item mx={'auto'} xs={11} xl={10}>
             {dateRange && dateRange == 'abc' ?
-              <Grid item md={10.9} lg={9.8} xl={9.6} pb={6}  mx={'auto'}>
+              <Grid item md={10.9} lg={9.8} xl={9.6} pb={6} mx={'auto'}>
                 <Box mt={5} py={7} sx={{ backgroundColor: "#efefef" }} >
                   <Typography textAlign={'center'} sx={{ fontFamily: 'Chivo', fontSize: '22px', color: '#5a5050' }}>
                     Oops! There’s no data to display with these filters.
@@ -121,10 +121,10 @@ function IgniteChildPLayTime() {
                     </Button>
                   </Box>
                 </Box>
-              </Grid> : <CustomTable  />}
+              </Grid> : <CustomTable />}
           </Grid>
           {/* Slider added Here.. */}
-          <Grid xs={10} sx={{pt:8,pb:5, mx:'auto'}}>
+          <Grid xs={10} sx={{ pt: 8, pb: 5, mx: 'auto' }}>
             <Box>
               <CustomSlider />
             </Box>
