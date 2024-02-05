@@ -5,49 +5,44 @@ import PageHeader from "../../../components/PageHeader"
 import CustomButton from "../../../components/CustomButton";
 import CommonSelect from "../../../components/CommonSelect";
 import SchoolList from "../../../dummyData/SchoolList";
-import { Avatar, Grid, Typography } from "@mui/material";
+import { Avatar, Grid, InputLabel, Radio, Typography } from "@mui/material";
 import CustomTextInput from "../../../components/form/CustomTextInput";
 import AddClassImgsList from '../../../dummyData/AddClassImgsList'
+import * as Yup from 'yup';
 
 import AddClassArtBoardImg from '../../../assets/images/ignite/Artboard 29.png';
 import { useState } from "react";
-    
-function AddClass() {
-    console.log( "Img list ", AddClassImgsList );
-    const [selectedBox, setSelectedBox] = useState<number>()
-    console.log( "Selected Index", selectedBox );
+import { useFormik } from "formik";
 
-    const initalValue = {
+function AddClass() {
+    const [selectedBox, setSelectedBox] = useState<number>()
+    const [selectedImg, setSelectedImg] = useState( '' );
+    const [selectedImgId, setSelectedImgId] = useState( 0 );
+    const [addFormValues, setAddFormValues] = useState( [] )
+
+    const initialValues = {
         schoolName: '',
         className: '',
         assignedTeacher: '',
         curriculumName: '',
         picture: ''
     }
-    const [addClassFormValue, setAddClassFormValue] = useState( initalValue );
-    const [formErrors, setFormErrors] = useState( {} );
-    const [isSubmitting, setIsSubmitting] = useState( false )
+    const validationSchema = Yup.object( {
+        // Validation Rule
+    } )
 
-    // const addClassSubmit = () => {
-    //     console.log( "=======>>>>", addClassFormValue );
-    // }
-
-    const handleChange = ( e: any ) => {
-        const { name, value } = e.target;
-        setAddClassFormValue( { ...addClassFormValue, [name]: value } );
-    }
-    const handleSubmit = ( e: any ) => {
-        e.preventDefault();
-        setFormErrors( validate( addClassFormValue ) );
-        setIsSubmitting( true );
-    }
-
-    const validate = ( formValues: any ) => {
-        let error = {};
-        // if(formValues)
-        return error;
+    // FormSubmission Logic
+    const onSubmit = ( values: any ) => {
+        console.log( "Form Values ", values );
+        setAddFormValues( values )
 
     }
+    const formik = useFormik( {
+        initialValues: initialValues,
+        validationSchema,
+        onSubmit: onSubmit
+    } )
+
     return (
         <Box>
             <Stack
@@ -76,12 +71,12 @@ function AddClass() {
             <Box mx={25}>
                 <Grid container mt={2}>
                     <Grid item xs={7}>
-                        <form action="">
+                        <form onSubmit={formik.handleSubmit}>
                             <Stack direction={'column'} gap={2} width={'60%'} >
-                                <CommonSelect labelName="School" arrayOfObject={SchoolList} bg_color="#eeeeee" />
-                                <CustomTextInput labelName="Name this class. (example: “Morning Class”)" bg_color="#eeeeee" value={addClassFormValue.className} onHandleChange={handleChange} fieldName="className" />
-                                <CommonSelect labelName="Assign a Teacher to this class." arrayOfObject={SchoolList} bg_color="#eeeeee" />
-                                <CommonSelect labelName="What curriculum does this class use?" arrayOfObject={SchoolList} bg_color="#eeeeee" />
+                                <CommonSelect labelName="School" arrayOfObject={SchoolList} bg_color="#eeeeee" name="schoolName" value={formik.values.schoolName} onHandleChange={formik.handleChange} />
+                                <CustomTextInput labelName="Name this class. (example: “Morning Class”)" bg_color="#eeeeee" value={formik.values.className} onHandleChange={formik.handleChange} name="className" />
+                                <CommonSelect labelName="Assign a Teacher to this class." arrayOfObject={SchoolList} bg_color="#eeeeee" name="assignedTeacher" value={formik.values.assignedTeacher} onHandleChange={formik.handleChange} />
+                                <CommonSelect labelName="What curriculum does this class use?" arrayOfObject={SchoolList} bg_color="#eeeeee" name="curriculumName" value={formik.values.curriculumName} onHandleChange={formik.handleChange} />
                                 <Box>
                                     <Typography
                                         sx={{
@@ -102,7 +97,6 @@ function AddClass() {
                                     <Typography
                                         sx={{
                                             color: '#000',
-
                                             fontWeight: 400,
                                             fontStyle: 'italic',
                                             fontSize: '13px'
@@ -116,20 +110,40 @@ function AddClass() {
                                 <Stack direction={'row'} width={'100%'} flexWrap={'wrap'} className="add-class-img-container">
                                     {
                                         AddClassImgsList.map( ( image, index ) => {
+                                            console.log( "imge", image.id, 'key', index );
+
                                             return (
-                                                <Stack width={'60px'} m={1} p={2} key={index} borderRadius={'8px'} onClick={() => { setSelectedBox( index ) }}
-                                                    className={`img-box ${index === selectedBox ? 'selected' : ''}`}>
-                                                    <Avatar
-                                                        variant="square"
-                                                        src={image.imgpath}
-                                                        sx={{
-                                                            width: '100%',
-                                                            height: '100%',
-                                                            '& .MuiAvatar-img': {
-                                                                objectFit: 'contain'
-                                                            }
-                                                        }} />
-                                                </Stack>
+                                                <>
+                                                    <Radio
+                                                        checked={( index + 1 ) === selectedImgId}
+                                                        id={`img${index}`}
+                                                        onChange={formik.handleChange}
+                                                        onClick={() => {
+                                                            setSelectedImgId( image.id )
+                                                        }}
+                                                        value={image.imgpath}
+
+                                                        name="picture"
+                                                        inputProps={{ 'aria-label': 'A' }}
+                                                        sx={{ display: 'none' }}
+                                                    />
+                                                    <InputLabel htmlFor={`img${index}`}><Stack width={'60px'} m={1} p={2} key={index} borderRadius={'8px'} onClick={() => { setSelectedBox( index ) }}
+
+                                                        className={`img-box ${index === selectedBox ? 'selected' : ''}`}>
+                                                        <Avatar
+
+                                                            variant="square"
+                                                            src={image.imgpath}
+                                                            sx={{
+                                                                width: '100%',
+                                                                height: '100%',
+                                                                '& .MuiAvatar-img': {
+                                                                    objectFit: 'contain'
+                                                                }
+                                                            }} />
+                                                    </Stack></InputLabel>
+
+                                                </>
                                             )
                                         } )
                                     }
@@ -142,6 +156,7 @@ function AddClass() {
                                     textColor="#fff"
                                     bgColor="#00af51"
                                     hoverBGColor="#009143"
+                                // onClickFuction={handleSubmit}
                                 />
                             </Stack>
 
@@ -152,6 +167,9 @@ function AddClass() {
 
                     <Grid item xs={5}>
                         <Box textAlign={'center'}>  <img src={AddClassArtBoardImg} alt="" width={'300px'} /> </Box>
+                        <Box >
+                            {JSON.stringify( addFormValues )}
+                        </Box>
                     </Grid>
                 </Grid>
             </Box>

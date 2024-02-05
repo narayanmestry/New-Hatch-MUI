@@ -1,6 +1,6 @@
 import FormControl from "@mui/material/FormControl"
 import MenuItem from "@mui/material/MenuItem"
-import Select from "@mui/material/Select"
+import Select, { SelectChangeEvent } from "@mui/material/Select"
 import Typography from "@mui/material/Typography"
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -10,13 +10,14 @@ import { ISelectItemList } from '../Interface/ISelectItemList'
 type OptionList = {
     labelName?: string,
     bg_color?: string,
-    arrayOfObject: ISelectItemList[]
+    arrayOfObject: ISelectItemList[],
+    name?: string,
+    value?: string,
+    onHandleChange?: ( event: SelectChangeEvent ) => void
 }
 function CommonSelect( props: OptionList ) {
     const selectOptionList: ISelectItemList[] = props.arrayOfObject
-    selectOptionList.map( ( value: ISelectItemList, index: number ) => {
-        console.log( "@@", value.labelName );
-    } )
+
 
     return (
         <FormControl sx={{ width: '100%' }}>
@@ -46,7 +47,10 @@ function CommonSelect( props: OptionList ) {
                 displayEmpty
                 inputProps={{ 'aria-label': 'Without label' }}
                 defaultValue='none'
+                value={props.value}
                 variant="outlined"
+                name={props.name}
+                onChange={props.onHandleChange}
                 sx={{
                     bgcolor: props.bg_color,
                 }}

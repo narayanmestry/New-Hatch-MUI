@@ -1,11 +1,12 @@
 import { FormControl, TextField, Typography } from "@mui/material"
+import { ChangeEvent } from "react"
 
 type OptionList = {
     labelName?: string,
     bg_color?: string,
     value?: string,
-    fieldName?: string
-    onHandleChange?: ( event: React.ChangeEvent<HTMLInputElement> ) => any
+    name?: string
+    onHandleChange?: ( event: ChangeEvent ) => any
 }
 function CustomTextInput( props: OptionList ) {
     return (
@@ -30,7 +31,7 @@ function CustomTextInput( props: OptionList ) {
             <TextField
                 size="small"
                 label=""
-                name={props.fieldName}
+                name={props.name}
                 variant="outlined"
                 value={props.value}
                 onChange={props.onHandleChange}
