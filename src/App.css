@@ -102,7 +102,7 @@
 .tableimage{
   background-image: url('./assets/images/insight/recbarpattern-taller-new.png') !important;
 }
-.css-1kqls9p-MuiDataGrid-root .MuiDataGrid-withBorderColor, .css-1iyq7zh-MuiDataGrid-columnHeaders, .css-1kqls9p-MuiDataGrid-root, .css-wop1k0-MuiDataGrid-footerContainer{
+.css-1mnt5tz-MuiDataGrid-root .MuiDataGrid-withBorderColor{
   border: none !important;
 }
 .css-t89xny-MuiDataGrid-columnHeaderTitle{
