@@ -19,6 +19,7 @@ type attributesList = {
 function CustomButton( props: attributesList ) {
     return (
         <Button
+            type="submit"
             disableRipple
             className="custom-buttom"
             onClick={props.onClickFuction}
