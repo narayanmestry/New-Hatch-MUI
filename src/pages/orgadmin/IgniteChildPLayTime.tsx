@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 import PageHeader from "../../components/PageHeader";
 import FormCustomSelect from "../../components/FormCustomSelect";
 import { SchoolList1 } from "../../dummyData/SchoolList1";
@@ -7,6 +7,7 @@ import CustomSlider from '../../components/CustomSlider';
 import { DateRangeList } from '../../dummyData/DateRange';
 import CustomTable from '../../components/CustomTable';
 import { useState } from 'react';
+import CustomButton from '../../components/CustomButton';
 
 function IgniteChildPLayTime() {
   const [dateRange, setDaterange] = useState<any>( 'abc' )
@@ -21,7 +22,47 @@ function IgniteChildPLayTime() {
       <Box>
         <Box>
           {/* add child page header */}
-          <PageHeader headerName="Child Play Time" />
+          <Stack
+            direction={"row"}
+            justifyContent={"space-between"}
+            sx={{
+              bgcolor: "#248dc1",
+              color: "#ffffff",
+            }}
+          >
+            <PageHeader headerName="View All Children" />
+            <Stack direction={"row"} gap={1} mr={3}>
+              <CustomButton
+                labelText="Print Report"
+                iconName="Printer"
+                textColor="#fff"
+                borderColor="transparent"
+                width="135px"
+                margin="11px 0"
+                padding="0"
+                hoverBorderColor="#fff"
+                border="1px solid"
+              />
+              <CustomButton
+                labelText="Export"
+                iconName="ExportDownload"
+                textColor="#fff"
+                borderColor="transparent"
+                width="90px"
+              />
+              <CustomButton
+                labelText="Back"
+                iconName="ArrowLeftOutlinedIcon"
+                textColor="#fff"
+                borderColor="transparent"
+                width="90px"
+                margin="12px 0"
+                padding="0"
+                hoverBorderColor="#fff"
+                border="1px solid"
+              />
+            </Stack>
+          </Stack>
         </Box>
 
         <Grid container >

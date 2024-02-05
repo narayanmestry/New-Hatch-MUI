@@ -18,6 +18,8 @@ import EditIcon from "@mui/icons-material/Edit";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 import PhonelinkIcon from '@mui/icons-material/Phonelink';
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+import PrintOutlinedIcon from '@mui/icons-material/PrintOutlined';
 
 type Icon = {
     iconName: string
@@ -48,5 +50,7 @@ function MaterialIcon( props: Icon ) {
     if ( props.iconName === "AddCircleOutlineOutlinedIcon" )  return <AddCircleOutlineOutlinedIcon />
     if ( props.iconName === "ArrowLeftOutlinedIcon" )  return <ArrowLeftOutlinedIcon />
     if ( props.iconName === "PhoneLink") return <PhonelinkIcon/>
+    if ( props.iconName === "ExportDownload") return <FileDownloadOutlinedIcon/>
+    if ( props.iconName === "Printer") return <PrintOutlinedIcon/>
 }
 export default MaterialIcon
