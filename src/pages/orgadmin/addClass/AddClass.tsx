@@ -150,9 +150,10 @@ function AddClass() {
                                 </Stack>
                             </Box>
                             <Stack direction={'row'} pt={2} pb={5} gap={3}>
-                                <CustomButton labelText="Cancel" textColor="#1e76a2" borderColor="transparent" hoverBGColor="transparent" />
+                                <CustomButton labelText="Cancel" fontSize="22px" textColor="#1e76a2" borderColor="transparent" hoverBGColor="transparent" />
                                 <CustomButton
                                     labelText="Create Class"
+                                    fontSize="22px" 
                                     textColor="#fff"
                                     bgColor="#00af51"
                                     hoverBGColor="#009143"

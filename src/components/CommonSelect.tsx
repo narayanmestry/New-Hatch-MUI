@@ -9,6 +9,7 @@ import { ISelectItemList } from '../Interface/ISelectItemList'
 
 type OptionList = {
     labelName?: string,
+    required?: boolean
     bg_color?: string,
     arrayOfObject: ISelectItemList[],
     name?: string,
@@ -37,7 +38,7 @@ function CommonSelect( props: OptionList ) {
                             fontSize: '12px'
                         },
                     }}>
-                    <label htmlFor="" >{props.labelName}</label>
+                    <label htmlFor="" >{props.labelName}</label>{props.required ? <><label htmlFor="" style={{ fontSize: '18px', color: '#248dc1', paddingLeft: '1px' }}>*</label></> : <></>}
                 </Typography>
             }
 

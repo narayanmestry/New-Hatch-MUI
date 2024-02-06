@@ -4,6 +4,7 @@ import { Box } from "@mui/material"
 type attributesList = {
     labelText: string,
     padding?: string,
+    fontSize?: string
     textColor?: string
     bgColor?: string,
     iconName?: string,
@@ -24,6 +25,7 @@ function CustomButton( props: attributesList ) {
             className="custom-buttom"
             onClick={props.onClickFuction}
             sx={{
+                fontSize: props.fontSize,
                 background: props.bgColor,
                 border: props.border ? props.border : '2px solid',
                 color: props.textColor,
@@ -32,7 +34,7 @@ function CustomButton( props: attributesList ) {
                     color: props.hoverTextColor,
                     borderColor: props.hoverBorderColor
                 },
-                borderRadius: '20px',
+                borderRadius: '40px',
                 textTransform: 'none',
                 fontFamily: "chivo",
                 borderColor: props.borderColor,

@@ -3,6 +3,7 @@ import { ChangeEvent } from "react"
 
 type OptionList = {
     labelName?: string,
+    required?: boolean
     bg_color?: string,
     value?: string,
     name?: string
@@ -25,7 +26,7 @@ function CustomTextInput( props: OptionList ) {
                             fontSize: '12px'
                         },
                     }}>
-                    <label htmlFor="" >{props.labelName}</label>
+                    <label htmlFor="" >{props.labelName}</label>{props.required ? <><label htmlFor="" style={{ fontSize: '18px', color: '#248dc1', paddingLeft: '1px' }}>*</label></> : <></>}
                 </Typography>
             }
             <TextField

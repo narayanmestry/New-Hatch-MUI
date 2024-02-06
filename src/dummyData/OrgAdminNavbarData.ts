@@ -372,7 +372,7 @@ const OrgAdminNavbarData = [
                         'id': 2,
                         'title': 'Add New Educator',
                         'icon': '',
-                        'link': ''
+                        'link': 'add-educator'
                     }
                 ]
             },
